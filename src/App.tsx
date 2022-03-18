@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import IndexApp from "./templates/indexApp";
+import pageData from "./page-data/index/page-data.json";
+import { useContext } from "react";
+import { AppDataContext, AppDataProvider } from "./context/AppDataContext";
+import { DocumentContext, DocumentProvider } from "./context/DocumentContext";
+import { WrapRootElement } from "./wrapRootElement";
+import CursorProvider from "./context/CursorContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DocumentProvider>
+      <CursorProvider>
+        <AppDataProvider>
+          <IndexApp data={pageData.result.data} location={window.location} />
+        </AppDataProvider>
+      </CursorProvider>
+    </DocumentProvider>
   );
 }
 
