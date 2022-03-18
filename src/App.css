@@ -38,12 +38,7 @@
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-html {
-  line-height: 1.15;
-}
-body {
-  margin: 0;
-}
+
 main {
   display: block;
 }
@@ -786,9 +781,7 @@ video {
 .absolute {
   position: absolute;
 }
-/* .relative {
-  position: relative;
-} */
+
 .top-0 {
   top: 0;
 }

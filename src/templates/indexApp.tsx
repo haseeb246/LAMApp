@@ -29,6 +29,8 @@ import commonUtil from "../utils/commonUtil";
 import { Animated } from "react-animated-css";
 import { Animate, AnimateGroup } from "react-simple-animate";
 import LazyLoad from "react-lazyload";
+import { Box, Grid } from "@material-ui/core";
+import Header from "../components/Header";
 // import { graphql } from "gatsby";
 
 // import { AppDataContext } from '../context/AppDataContext';
@@ -55,10 +57,12 @@ export interface IIndexProp {
 const IndexApp = ({ data, location }: IIndexProp) => {
   const { setHeaderVisible } = useContext(AppDataContext);
   const { device } = useContext(DocumentContext);
+  const myRef = useRef(null);
 
   const showReelRef = useRef();
 
   const [loading, setLoading] = useState<boolean>(true);
+  const [afterLoading, setAfterLoading] = useState<boolean>(false);
   const [rendered, setRendered] = useState<boolean>(false);
 
   const [touchLoaded, setTouchLoaded] = useState<boolean>(false);
@@ -66,6 +70,10 @@ const IndexApp = ({ data, location }: IIndexProp) => {
     null
   );
   const [showreelActive, setShowreelActive] = useState<boolean>(false);
+  const [isShowProgTools, setIsShowProgTools] = useState<boolean>(false);
+  const [isShowProjEvolve, setIsShowProjEvolve] = useState<boolean>(false);
+  const [isShowLineOfCode, setIsShowLineOfCode] = useState<boolean>(false);
+  const [isShowComm, setIsShowComm] = useState<boolean>(false);
 
   const { markdownRemark } = data;
   const { frontmatter } = markdownRemark;
@@ -133,23 +141,33 @@ const IndexApp = ({ data, location }: IIndexProp) => {
   }, 200);
 
   useTimeout(() => {
-    setScrambleText(`Commitment to`);
-  }, 1000);
-  useTimeout(() => {
-    setScrambleText(`expanding imaginary`);
-  }, 3000);
-
-  useTimeout(() => {
-    setScrambleText(`boundaries & disrupting`);
-  }, 5000);
-
-  useTimeout(() => {
-    setScrambleText(`the status quo. TM`);
-  }, 7000);
-
-  useTimeout(() => {
+    setScrambleText(``);
     setLoading(false);
-  }, 10000);
+    setIsShowProgTools(true);
+
+    setTimeout(() => {
+      setAfterLoading(true);
+      setTimeout(() => {
+        setIsShowProjEvolve(true);
+        setTimeout(() => {
+          setIsShowLineOfCode(true);
+          setIsShowComm(true);
+          setScrambleText(`Commitment to expanding imaginary`);
+        }, 4000);
+        setTimeout(() => {
+          setScrambleText(`boundaries & disrupting the status quo. TM`);
+        }, 10000);
+
+        setTimeout(() => {
+          setScrambleText(``);
+        }, 15000);
+      }, 3000);
+
+      setTimeout(() => {
+        setScrambleText(`the status quo. TM`);
+      }, 7000);
+    }, 500);
+  }, 1000);
 
   useTimeout(() => {
     setHeaderVisible(true);
@@ -159,7 +177,452 @@ const IndexApp = ({ data, location }: IIndexProp) => {
 
   return (
     <>
-      {showreelActive && device && device === `desktop` && (
+      {/* <h1 className="animate__animated animate__bounce">
+          An animated element
+        </h1>
+        <h1
+          style={{
+            display: "inline-block",
+            margin: "0 0.5rem",
+            animation: "bounce",
+            animationDuration: "2s",
+          }}
+        >
+          An animated element
+        </h1> */}
+      {/* <Animate
+                play={true} // set play true to start the animation
+                duration={1} // how long is the animation duration
+                delay={0.3} // how many delay seconds will apply before the animation start
+                start={{ transform: "translate(100%, 0)" }}
+                end={{ transform: "translate(10px, 10px)" }}
+                // complete={{ display: "none" }}
+                easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
+                // onComplete={onCompleteCallBack} // call back function when animation is completed
+              >
+                <div style={{ color: "white", fontSize: "2vw" }}>
+                  1 abc hello dsjsdjjdsjd dsdslklds dslk jdslkjds lkdsj ldskj
+                  dslkjdslkj
+                </div>
+              </Animate> */}
+
+      {/* <LazyLoad throttle={100} height={400}> */}
+      {/* <div className="index-page__content bg-black">
+              <div role="presentation">
+                <img
+                  src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
+                  alt="logo"
+                  style={{ width: "300px", height: "300px" }}
+                />
+              </div>
+            </div> */}
+      {/* <img
+              style={{ width: "300px", height: "300px" }}
+              src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
+              alt="Fluff Casual Cosmetics"
+            /> */}
+      {/* </LazyLoad> */}
+      {/* <div
+                        style={{
+                          fontWeight: "bold",
+                          color: "white",
+                          fontSize: "5vw",
+                          display: "inline-block",
+                          margin: "0 0.5rem",
+                          animation: loading ? "backInRight" : "backOutRight",
+                          animationDuration: "2s",
+                          // animationDelay: "100",
+                          // animationIterationCount: "10",
+                        }}
+                      >
+                        Programming tools <br /> for the future
+                      </div> */}
+      {/* <div
+                        style={{
+                          fontWeight: "bold",
+                          color: "white",
+                          fontSize: "5vw",
+                          display: "inline-block",
+                          margin: "0 0.5rem",
+                          animation: loading ? "backInRight" : "backOutRight",
+                          animationDuration: "2s",
+                          // animationDelay: "100",
+                          // animationIterationCount: "10",
+                        }}
+                      >
+                        Programming tools <br /> for the future
+                      </div> */}
+      <Box pl={"45px"} pr={"45px"} style={{ color: "white" }}>
+        <Grid container>
+          <Grid item sm={12} id="header">
+            <Header />
+          </Grid>
+          <Grid item sm={12} id="home" style={{ minHeight: "600px" }}>
+            {device && device === `desktop` && (
+              <>
+                <Grid container>
+                  <Grid item sm={12} style={{ minHeight: "50px" }}>
+                    {" "}
+                  </Grid>
+                  {isShowProgTools && (
+                    <Grid item sm={12} style={{ marginTop: "15px" }}>
+                      <div
+                        className={"animate__animated animate__backInRight"}
+                        style={{
+                          fontWeight: "bold",
+                          color: "white",
+                          fontSize: "5vw",
+                          animationDuration: "2.5s",
+                          animationDelay: "1s",
+                        }}
+                      >
+                        {/* <WaveText
+                        interval={20}
+                        delay={1500}
+                        text={`Programming tools`}
+                      /> */}
+                        <Scrambler
+                          style={{
+                            fontSize: "5vw",
+                          }}
+                          className="whitespace-no-wrap"
+                          delay={1500}
+                          iterations={20}
+                          text={`Programming tools`}
+                        />
+                        <br />
+                        <Scrambler
+                          style={{
+                            fontSize: "5vw",
+                          }}
+                          className="whitespace-no-wrap"
+                          delay={1500}
+                          iterations={20}
+                          text={`for the future`}
+                        />
+                      </div>
+                    </Grid>
+                  )}
+
+                  {isShowProjEvolve && (
+                    <div
+                      className={"animate__animated  animate__backInRight"}
+                      style={{
+                        fontWeight: "bold",
+                        color: "white",
+                        fontSize: "5vw",
+                        animationDuration: "2.5s",
+                        animationDelay: "1s",
+                      }}
+                    >
+                      <Scrambler
+                        style={{
+                          fontSize: "4vw",
+                        }}
+                        className="whitespace-no-wrap"
+                        delay={1500}
+                        iterations={20}
+                        text={`Home of Project Evolv`}
+                      />
+                    </div>
+                  )}
+
+                  {afterLoading && isShowLineOfCode && (
+                    <>
+                      <Grid item sm={12} style={{ marginTop: "15px" }}>
+                        <div
+                          className={"animate__animated animate__backInLeft"}
+                          style={{
+                            fontWeight: "bold",
+                            color: "white",
+                            fontSize: "5vw",
+                            animationDuration: "3s",
+                            animationDelay: "100",
+                          }}
+                        >
+                          <Scrambler
+                            className="whitespace-no-wrap"
+                            delay={400}
+                            iterations={5}
+                            text={`<p>This is code line </p>`}
+                          />
+                        </div>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "15px" }}>
+                        <div
+                          className={"animate__animated  animate__backInRight"}
+                          style={{
+                            fontWeight: "bold",
+                            color: "white",
+                            fontSize: "5vw",
+                            animationDuration: "2s",
+                            animationDelay: "100",
+                          }}
+                        >
+                          <Scrambler
+                            style={{
+                              fontSize: "2vw",
+                            }}
+                            className="whitespace-no-wrap"
+                            delay={400}
+                            iterations={15}
+                            text={scrambleText}
+                          />
+                        </div>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "50px" }}>
+                        <AppearOnScroll>
+                          <Grid container>
+                            <Grid item sm={4}>
+                              {" "}
+                            </Grid>
+                            <Grid item sm={4}>
+                              <div role="presentation">
+                                <img
+                                  src={commonUtil.GetImagePath(
+                                    "/assets/logos/logo.jpg"
+                                  )}
+                                  alt="logo"
+                                  style={{ width: "300px", height: "300px" }}
+                                />
+                              </div>
+                            </Grid>
+                            <Grid item sm={4}>
+                              {" "}
+                            </Grid>
+                          </Grid>
+                        </AppearOnScroll>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "50px" }}>
+                        <AppearOnScroll once={false}>
+                          <div
+                            className={"animate__animated animate__backInRight"}
+                            style={{
+                              fontWeight: "bold",
+                              color: "white",
+                              fontSize: "2vw",
+                              animationDuration: "2s",
+                              animationDelay: "100",
+                            }}
+                          >
+                            {
+                              "Created & Built with simplicity, flexibility & reliability in mind for every level of skill."
+                            }
+                            {
+                              "Our simple, intermediate and advanced levels, feature options that were carefully"
+                            }
+                            {
+                              "considered based on skill difficulty for each group."
+                            }
+                          </div>
+                        </AppearOnScroll>
+                      </Grid>
+
+                      <Grid item sm={12} style={{ marginTop: "50px" }}>
+                        <Grid container>
+                          <Grid item sm={12} style={{ marginTop: "15px" }}>
+                            <WaveText
+                              className="f3"
+                              delay={10}
+                              text={`Whatever level of building you are at, Noctem tools will allow you to: `}
+                            />
+                          </Grid>
+                          <Grid container style={{ marginTop: "30px" }}>
+                            <Grid item sm={4}>
+                              {" "}
+                              <WaveText
+                                className="f3"
+                                delay={10}
+                                text={`Save Time`}
+                              />
+                            </Grid>
+                            <Grid item sm={4}>
+                              {" "}
+                              <WaveText
+                                className="f3"
+                                delay={10}
+                                text={`Save Money `}
+                              />
+                            </Grid>
+                            <Grid item sm={4}>
+                              {" "}
+                              <WaveText
+                                className="f3"
+                                delay={10}
+                                text={`Gain Quality`}
+                              />
+                            </Grid>
+                            <Grid item sm={4}>
+                              {" "}
+                              <WaveText
+                                className="f3"
+                                delay={10}
+                                text={`Gain Reliability`}
+                              />
+                            </Grid>
+                            <Grid item sm={4}>
+                              {" "}
+                              <WaveText
+                                className="f3"
+                                delay={10}
+                                text={`Gain Flexibility`}
+                              />
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <WaveText
+                          className="f3"
+                          delay={10}
+                          text={`No need to start building from zero. No need to start from scratch. You are already`}
+                        />
+                        <WaveText
+                          className="f3"
+                          delay={20}
+                          text={`ahead with Noctem developer tools. If your not currently building in C#, here is`}
+                        />
+                        <WaveText
+                          className="f3"
+                          delay={30}
+                          text={`another excellent reason to add this to your tech stack.`}
+                        />
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <WaveText
+                          className="f2"
+                          delay={10}
+                          text={`C# - A state of the art, open-source, cross-platform programming language. `}
+                        />
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <Grid container>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                          <Grid
+                            item
+                            sm={4}
+                            style={{
+                              textAlign: "center",
+                              fontSize: "20px",
+                              color: "rgb(192, 0, 0)",
+                            }}
+                          >
+                            <p>New</p>
+                            <p>Project Evolv 2.0</p>
+                            <p>{"Version 2.0 & Version 3.0"}</p>
+                            <p>{"More than Cross Platform"}</p>
+                          </Grid>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <Grid container>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                          <Grid
+                            item
+                            sm={4}
+                            style={{
+                              textAlign: "center",
+                              color: "rgb(83, 129, 53)",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+                              textDecoration: "none",
+                              fontSize: "16pt",
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "26px",
+                            }}
+                          >
+                            <p>New</p>
+                            <p>Project Evolv 2.0</p>
+                            <p>{"Version 2.0 & Version 3.0"}</p>
+                            <p>{"More than Cross Platform"}</p>
+                          </Grid>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <Grid container>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                          <Grid
+                            item
+                            sm={4}
+                            style={{
+                              textAlign: "center",
+                              color: "rgb(204, 193, 217)",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+                              textDecoration: "none",
+                              fontSize: "18pt",
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "30px",
+                            }}
+                          >
+                            <p>New</p>
+                            <p>Project Evolv 2.0</p>
+                            <p>{"Version 2.0 & Version 3.0"}</p>
+                            <p>{"More than Cross Platform"}</p>
+                          </Grid>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                        <Grid container>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                          <Grid
+                            item
+                            sm={4}
+                            style={{
+                              textAlign: "center",
+                              color: "rgb(127, 96, 0)",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+                              textDecoration: "none",
+                              fontSize: "22pt",
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "36px",
+                            }}
+                          >
+                            <p>New</p>
+                            <p>Project Evolv 2.0</p>
+                            <p>{"Version 2.0 & Version 3.0"}</p>
+                            <p>{"More than Cross Platform"}</p>
+                          </Grid>
+                          <Grid item sm={4}>
+                            {" "}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      {<Footer />}
+                    </>
+                  )}
+                </Grid>
+              </>
+            )}
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* {showreelActive && device && device === `desktop` && (
         <div className="index-page__modal animation-appear w-full h-full fixed top-0 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black">
           <CursorInteractive mode="close" text="Close">
             <button
@@ -178,42 +641,13 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             src="https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
           />
         </div>
-      )}
+      )} */}
 
-      <Layout className="index-page w-full relative bg-black text-white">
-        {/* <h1 className="animate__animated animate__bounce">
-          An animated element
-        </h1>
-        <h1
-          style={{
-            display: "inline-block",
-            margin: "0 0.5rem",
-            animation: "bounce",
-            animationDuration: "2s",
-          }}
-        >
-          An animated element
-        </h1> */}
-
+      {/* <div id="services">services</div> */}
+      {/* <div className="index-page w-full relative bg-black text-white">
         <ScreenHeight className="index-page__banner w-full relative flex items-end pb-v4 xs:pb-12 overflow-hidden">
           <div className="grid">
             <div className="index-page__banner__text grid-end-12 grid-start-1">
-              {/* <Animate
-                play={true} // set play true to start the animation
-                duration={1} // how long is the animation duration
-                delay={0.3} // how many delay seconds will apply before the animation start
-                start={{ transform: "translate(100%, 0)" }}
-                end={{ transform: "translate(10px, 10px)" }}
-                // complete={{ display: "none" }}
-                easeType="cubic-bezier(0.445, 0.05, 0.55, 0.95)"
-                // onComplete={onCompleteCallBack} // call back function when animation is completed
-              >
-                <div style={{ color: "white", fontSize: "2vw" }}>
-                  1 abc hello dsjsdjjdsjd dsdslklds dslk jdslkjds lkdsj ldskj
-                  dslkjdslkj
-                </div>
-              </Animate> */}
-
               {device && device === `desktop` && (
                 <>
                   <div className="w-full relative">
@@ -272,21 +706,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           text={`for the future`}
                         />
                       </div>
-                      {/* <div
-                        style={{
-                          fontWeight: "bold",
-                          color: "white",
-                          fontSize: "5vw",
-                          display: "inline-block",
-                          margin: "0 0.5rem",
-                          animation: loading ? "backInRight" : "backOutRight",
-                          animationDuration: "2s",
-                          // animationDelay: "100",
-                          // animationIterationCount: "10",
-                        }}
-                      >
-                        Programming tools <br /> for the future
-                      </div> */}
+                     
                     </div>
 
                     {!loading && (
@@ -363,22 +783,6 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                       </div>
                     </div>
 
-                    {/* {!loading && ( */}
-                    {/* <Fragment>
-                    
-                    </Fragment> */}
-                    {/* )} */}
-                    {/* <Scrambler
-                        style={{
-                          fontSize: "4vw",
-                        }}
-                        className="whitespace-no-wrap"
-                        delay={100}
-                        iterations={20}
-                        text={
-                          loading ? ` for the future` : `Home of Project Evolv`
-                        }
-                      /> */}
                   </div>
                 </>
               )}
@@ -465,61 +869,30 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                         for the future
                       </div>
                     )}
-                    {/* <Scrambler
-                      className={`${
-                        loading ? `` : `opacity-0`
-                      } transition-opacity g3 whitespace-no-wrap`}
-                      delay={100}
-                      iterations={20}
-                      text={loading ? `agency for the` : ``}
-                    /> */}
+                  
                   </div>
 
-                  {/* <div
-                    className={`index-page__banner__scrambler gpu ${scrambleTransitionClass}`}
-                    style={{ transitionDelay: `400ms` }}
-                  >
-                    <Scrambler
-                      className="g3 whitespace-no-wrap"
-                      delay={200}
-                      iterations={22}
-                      text={loading ? `digital age is` : `Love + Money is`}
-                    />
-                  </div> */}
+                
                 </div>
               )}
-
-              {/* <div
-                className={`index-page__banner__scrambler relative z-10 ${scrambleTransitionClass}`}
-                style={{ transitionDelay: `500ms` }}
-              >
-                <Scrambler
-                  className={`${
-                    device && device === `desktop` ? `g4` : `g3`
-                  } whitespace-no-wrap`}
-                  delay={200}
-                  iterations={10}
-                  text={`${scrambleText || `.`}`}
-                />
-              </div> */}
             </div>
           </div>
-        </ScreenHeight>
+        </ScreenHeight> */}
 
-        <section
-          className={`index-page__showreel ${
-            loading ? `` : `loaded`
-          } w-full relative block`}
-        >
-          <CursorInteractive mode="hover" text="Play">
-            <button
-              type="button"
-              className="w-full h-full absolute top-0 right-0 bottom-0 left-0 z-20"
-              onClick={showVideo}
-            ></button>
-          </CursorInteractive>
+      <section
+        className={`index-page__showreel ${
+          loading ? `` : `loaded`
+        } w-full relative block`}
+      >
+        <CursorInteractive mode="hover" text="Play">
+          <button
+            type="button"
+            className="w-full h-full absolute top-0 right-0 bottom-0 left-0 z-20"
+            onClick={showVideo}
+          ></button>
+        </CursorInteractive>
 
-          <video
+        {/* <video
             autoPlay
             className="w-full relative block"
             loop
@@ -529,214 +902,29 @@ const IndexApp = ({ data, location }: IIndexProp) => {
               commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
             }
             // src="https://player.vimeo.com/external/459243941.hd.mp4?s=ffc9d4d0429a43a3bb41002fe42d16a1eaa3b406&profile_id=175"
-          />
-        </section>
+          /> */}
+      </section>
 
-        {!loading && (
+      {/* {!loading && (
           <>
-            <section className="w-full relative mt-24 pb-10">
-              <div className="grid">
-                <div className="grid-end-4 xs:grid-end-12"></div>
-                <div className="grid-end-4 xs:grid-end-12">
-                  <div role="presentation">
-                    <img
-                      src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
-                      alt="logo"
-                      style={{ width: "300px", height: "300px" }}
-                    />
-                  </div>
+           
+            <Grid container style={{ color: "rgb(83, 129, 53)" }}>
+              <Grid item sm={12} style={{ marginTop: "15px" }}>
+                <div
+                  className={"animate__animated animate__backInRight"}
+                  style={{
+                    fontWeight: "bold",
+                    color: "white",
+                    fontSize: "1vw",
+                    // animationDuration: "3s",
+                    // animationDelay: "200",
+                  }}
+                >
+                  Project Evolv Version 3.0 Haseeb Testing
                 </div>
-                <div className="grid-end-4 xs:grid-end-12"></div>
-              </div>
-            </section>
+              </Grid>
+            </Grid>
 
-            <section className="w-full relative mt-24 pb-10">
-              <div className="grid">
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={10}
-                    text={`Created & Built with simplicity, flexibility & reliability in mind for every level of skill.`}
-                  />
-                  <WaveText
-                    className="f2"
-                    delay={20}
-                    text={`Our simple, intermediate and advanced levels, feature options that were carefully`}
-                  />
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`considered based on skill difficulty for each group.`}
-                  />
-                </div>
-              </div>
-            </section>
-            <section className="w-full relative mt-24 pb-10">
-              <div className="grid">
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f3"
-                    delay={10}
-                    text={`Whatever level of building you are at, Noctem tools will allow you to: `}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <div className="grid">
-                    <div className="grid-end-4 xs:grid-end-12">
-                      <WaveText className="f3" delay={10} text={`Save Time`} />
-                    </div>
-                    <div className="grid-end-4 xs:grid-end-12">
-                      <WaveText
-                        className="f3"
-                        delay={10}
-                        text={`Save Money `}
-                      />
-                    </div>
-                    <div className="grid-end-4 xs:grid-end-12">
-                      <WaveText
-                        className="f3"
-                        delay={10}
-                        text={`Gain Quality`}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <div className="grid">
-                    <div className="grid-end-4 xs:grid-end-12">
-                      <WaveText
-                        className="f3"
-                        delay={40}
-                        text={`Gain Reliability`}
-                      />
-                    </div>
-                    <div className="grid-end-4 xs:grid-end-12">
-                      <WaveText
-                        className="f3"
-                        delay={50}
-                        text={`Gain Flexibility`}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="w-full relative mt-24 pb-10">
-              <div className="grid">
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={10}
-                    text={`No need to start building from zero. No need to start from scratch. You are already`}
-                  />
-                  <WaveText
-                    className="f2"
-                    delay={20}
-                    text={`ahead with Noctem developer tools. If your not currently building in C#, here is`}
-                  />
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`another excellent reason to add this to your tech stack.`}
-                  />
-                </div>
-              </div>
-            </section>
-            <section className="w-full mt-15 pb-10">
-              <div className="grid">
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={10}
-                    text={`C# - A state of the art, open-source, cross-platform programming language. `}
-                  />
-                </div>
-              </div>
-            </section>
-            <section className="w-full mt-15 pb-10">
-              <div className="grid" style={{ color: "rgb(192, 0, 0)" }}>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText className="f2" delay={10} text={`New`} />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={20}
-                    text={`Project Evolv 2.0`}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText className="f2" delay={30} text={`logo`} />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`Version 2.0 & Version 3.0`}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`More than Cross Platform`}
-                  />
-                </div>
-              </div>
-            </section>
-            <section className="w-full mt-15 pb-10">
-              <div className="grid" style={{ color: "rgb(83, 129, 53)" }}>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={10}
-                    text={`Project Evolv Version 1.0 Free to Students `}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={20}
-                    text={`Project Evolv 2.0`}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText className="f2" delay={30} text={`logo`} />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`Version 2.0 & Version 3.0`}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={30}
-                    text={`More than Cross Platform`}
-                  />
-                </div>
-              </div>
-            </section>
-            <section className="w-full mt-15 pb-10">
-              <div className="grid" style={{ color: "rgb(83, 129, 53)" }}>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={10}
-                    text={`Project Evolv Version 3.0`}
-                  />
-                </div>
-                <div className="grid-end-12 xs:grid-end-12">
-                  <WaveText
-                    className="f2"
-                    delay={20}
-                    text={` To be showcased for Transcend 2023`}
-                  />
-                </div>
-              </div>
-            </section>
             <section className="w-full mt-15 pb-10">
               <div className="grid" style={{ color: "rgb(83, 129, 53)" }}>
                 <div className="grid-end-12 xs:grid-end-12">
@@ -774,22 +962,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                 </div>
               </div>
             </section>
-            {/* <LazyLoad throttle={100} height={400}> */}
-            {/* <div className="index-page__content bg-black">
-              <div role="presentation">
-                <img
-                  src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
-                  alt="logo"
-                  style={{ width: "300px", height: "300px" }}
-                />
-              </div>
-            </div> */}
-            {/* <img
-              style={{ width: "300px", height: "300px" }}
-              src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
-              alt="Fluff Casual Cosmetics"
-            /> */}
-            {/* </LazyLoad> */}
+
             <div className="index-page__content bg-black mt-10">
               <section className="w-full flex flex-col justify-between">
                 <article className="grid pt-v8 xs:pt-v10 pb-v12">
@@ -873,8 +1046,6 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                     Brands, Products and Businesses for the digital age.
                   </h2>
                 </header>
-
-                {/* // */}
 
                 <div className="grid">
                   <article className="animation-appear-right animation-delay-1 grid-end-3 xs:grid-end-12 grid-start-1">
@@ -960,7 +1131,6 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                 </div>
               </section>
 
-              {/* CLIENTS LOGOS */}
               {clients?.[0] && <ClientLogos clients={clients} />}
 
               <AppearOnScroll>
@@ -1058,10 +1228,8 @@ const IndexApp = ({ data, location }: IIndexProp) => {
               </AppearOnScroll>
             </div>
           </>
-        )}
-      </Layout>
-
-      {!loading && <Footer />}
+        )} */}
+      {/* </div> */}
     </>
   );
 };
