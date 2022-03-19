@@ -63,7 +63,7 @@ const Footer = () => {
           <section className="grid">
             <div className="grid-end-6 xs:grid-end-12 grid-start-4 xs:grid-start-1 mt-v7 xs:mt-v7 mb-v10 xs:mb-v8">
               <CursorInteractive mode="hover" text="Email us">
-                <a href="mailto:hello@loveandmoney.agency">
+                <a href="mailto:info@NCTMCO.com">
                   <Button
                     className="footer__big-button w-full relative block"
                     color="black"
@@ -157,7 +157,7 @@ const Footer = () => {
                   <span className="b3 mono">Get a Job</span>
 
                   <a
-                    href="mailto:hello@loveandmoney.agency"
+                    href="mailto:info@NCTMCO.com"
                     className="relative flex items-center mr-v2"
                   >
                     <LinkButton className="ml-v1" color="black" transparent />

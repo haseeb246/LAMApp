@@ -1489,7 +1489,21 @@ body {
   -webkit-font-smoothing: antialiased;
   /* position: relative; */
   background-color: #121212;
+  /* color: #fff; */
+  /* color: rgba(255, 255, 255, var(--text-opacity)); */
 }
+
+/* * {
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+} */
+
+.text-white {
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
 body::-webkit-scrollbar {
   display: none;
 }

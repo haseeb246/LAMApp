@@ -49,7 +49,7 @@ const Header = ({ clipped, color }: any) => {
             <Toolbar>
               <Box display="flex" flexGrow={1}>
                 {/* whatever is on the left side */}
-                <CursorInteractive mode="hover">
+                <a href="#home">
                   <img
                     src={commonUtil.GetImagePath("/assets/logos/logo.jpg")}
                     alt={"logo"}
@@ -64,7 +64,7 @@ const Header = ({ clipped, color }: any) => {
                       device && device === `mobile` ? `<3 + $` : ` NOCTEM CORP`
                     }`}
                   />
-                </CursorInteractive>
+                </a>
               </Box>
 
               <div style={{ textAlign: "right", justifyContent: "right" }}>
@@ -156,7 +156,7 @@ const Header = ({ clipped, color }: any) => {
                       <li className="header__link animation-appear-right-slow animation-delay-1 mr-v2">
                         <CursorInteractive mode="down" text="unimplemented">
                           <a
-                            href="#contact"
+                            href="#contactus"
                             className="header__link animation-appear-right-slow animation-delay-5"
                           >
                             <Scrambler
@@ -170,7 +170,7 @@ const Header = ({ clipped, color }: any) => {
                     </ul>
 
                     <CursorInteractive mode="hover" text="Email us">
-                      <a href="mailto:hello@loveandmoney.agency">
+                      <a href="mailto:info@NCTMCO.com">
                         <Button
                           className="header__button animation-appear-right-slow animation-delay-5 relative block text-center"
                           color="white"

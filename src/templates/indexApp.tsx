@@ -94,6 +94,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
   //
 
   const showVideo = () => {
+    debugger;
     setShowreelActive(true);
   };
 
@@ -252,7 +253,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                       >
                         Programming tools <br /> for the future
                       </div> */}
-      <Box pl={"45px"} pr={"45px"} style={{ color: "white" }}>
+      <Box className="text-white" pl={"45px"} pr={"45px"}>
         <Grid container>
           <Grid item sm={12} id="header">
             <Header />
@@ -270,36 +271,27 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                         className={"animate__animated animate__backInRight"}
                         style={{
                           fontWeight: "bold",
-                          color: "white",
-                          fontSize: "5vw",
+                          fontSize: "4vw",
                           animationDuration: "2.5s",
                           animationDelay: "1s",
                         }}
                       >
-                        {/* <WaveText
-                        interval={20}
-                        delay={1500}
-                        text={`Programming tools`}
-                      /> */}
-                        <Scrambler
-                          style={{
-                            fontSize: "5vw",
-                          }}
-                          className="whitespace-no-wrap"
-                          delay={1500}
-                          iterations={20}
-                          text={`Programming tools`}
-                        />
-                        <br />
-                        <Scrambler
-                          style={{
-                            fontSize: "5vw",
-                          }}
-                          className="whitespace-no-wrap"
-                          delay={1500}
-                          iterations={20}
-                          text={`for the future`}
-                        />
+                        <p>
+                          <Scrambler
+                            className="whitespace-no-wrap"
+                            delay={1500}
+                            iterations={20}
+                            text={`Programming tools`}
+                          />
+                        </p>
+                        <p>
+                          <Scrambler
+                            className="whitespace-no-wrap"
+                            delay={1500}
+                            iterations={20}
+                            text={`for the future`}
+                          />
+                        </p>
                       </div>
                     </Grid>
                   )}
@@ -310,15 +302,12 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                       style={{
                         fontWeight: "bold",
                         color: "white",
-                        fontSize: "5vw",
+                        fontSize: "4vw",
                         animationDuration: "2.5s",
                         animationDelay: "1s",
                       }}
                     >
                       <Scrambler
-                        style={{
-                          fontSize: "4vw",
-                        }}
                         className="whitespace-no-wrap"
                         delay={1500}
                         iterations={20}
@@ -334,8 +323,8 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           className={"animate__animated animate__backInLeft"}
                           style={{
                             fontWeight: "bold",
-                            color: "white",
-                            fontSize: "5vw",
+                            // color: "white",
+                            fontSize: "4vw",
                             animationDuration: "3s",
                             animationDelay: "100",
                           }}
@@ -354,7 +343,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           style={{
                             fontWeight: "bold",
                             color: "white",
-                            fontSize: "5vw",
+                            fontSize: "4vw",
                             animationDuration: "2s",
                             animationDelay: "100",
                           }}
@@ -370,6 +359,34 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           />
                         </div>
                       </Grid>
+
+                      <Grid
+                        item
+                        sm={12}
+                        style={{ marginTop: "30px", marginBottom: "30px" }}
+                      >
+                        {/* <CursorInteractive mode="hover" text="Play">
+                          <button
+                            type="button"
+                            className="w-full h-full absolute top-0 right-0 bottom-0 left-0 z-20"
+                            onClick={showVideo}
+                          ></button>
+                        </CursorInteractive> */}
+                        <video
+                          onClick={showVideo}
+                          autoPlay
+                          className="w-full relative block"
+                          loop
+                          muted
+                          playsInline
+                          src={
+                            commonUtil.GetLocalPath() +
+                            "assets/videos/PEshortcommercial.mp4"
+                          }
+                          // src="https://player.vimeo.com/external/459243941.hd.mp4?s=ffc9d4d0429a43a3bb41002fe42d16a1eaa3b406&profile_id=175"
+                        />
+                      </Grid>
+
                       <Grid item sm={12} style={{ marginTop: "50px" }}>
                         <AppearOnScroll>
                           <Grid container>
@@ -398,9 +415,14 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           <div
                             className={"animate__animated animate__backInRight"}
                             style={{
+                              backgroundColor: "transparent",
                               fontWeight: "bold",
-                              color: "white",
-                              fontSize: "2vw",
+                              fontStyle: "normal",
+                              textDecoration: "none",
+                              fontSize: "16pt",
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "26px",
                               animationDuration: "2s",
                               animationDelay: "100",
                             }}
@@ -418,79 +440,106 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                         </AppearOnScroll>
                       </Grid>
 
-                      <Grid item sm={12} style={{ marginTop: "50px" }}>
-                        <Grid container>
-                          <Grid item sm={12} style={{ marginTop: "15px" }}>
-                            <WaveText
-                              className="f3"
-                              delay={10}
-                              text={`Whatever level of building you are at, Noctem tools will allow you to: `}
-                            />
+                      <Grid
+                        item
+                        sm={12}
+                        style={{
+                          marginTop: "50px",
+                          backgroundColor: "transparent",
+                          fontWeight: "bold",
+                          fontStyle: "normal",
+                          textDecoration: "none",
+                          fontSize: "16pt",
+                          fontFamily:
+                            "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                          lineHeight: "26px",
+                          animationDuration: "2s",
+                          animationDelay: "100",
+                        }}
+                      >
+                        <LazyLoad throttle={300} height={400} once={false}>
+                          <Grid container>
+                            <Grid item sm={12} style={{ marginTop: "15px" }}>
+                              <WaveText
+                                delay={10}
+                                text={`Whatever level of building you are at, Noctem tools will allow you to: `}
+                              />
+                            </Grid>
+                            <Grid container style={{ marginTop: "30px" }}>
+                              <Grid item sm={4}>
+                                {" "}
+                                <WaveText delay={10} text={`Save Time`} />
+                              </Grid>
+                              <Grid item sm={4}>
+                                {" "}
+                                <WaveText delay={10} text={`Save Money `} />
+                              </Grid>
+                              <Grid item sm={4}>
+                                {" "}
+                                <WaveText delay={10} text={`Gain Quality`} />
+                              </Grid>
+                              <Grid item sm={4}>
+                                {" "}
+                                <WaveText
+                                  delay={10}
+                                  text={`Gain Reliability`}
+                                />
+                              </Grid>
+                              <Grid item sm={4}>
+                                {" "}
+                                <WaveText
+                                  delay={10}
+                                  text={`Gain Flexibility`}
+                                />
+                              </Grid>
+                            </Grid>
                           </Grid>
-                          <Grid container style={{ marginTop: "30px" }}>
-                            <Grid item sm={4}>
-                              {" "}
-                              <WaveText
-                                className="f3"
-                                delay={10}
-                                text={`Save Time`}
-                              />
-                            </Grid>
-                            <Grid item sm={4}>
-                              {" "}
-                              <WaveText
-                                className="f3"
-                                delay={10}
-                                text={`Save Money `}
-                              />
-                            </Grid>
-                            <Grid item sm={4}>
-                              {" "}
-                              <WaveText
-                                className="f3"
-                                delay={10}
-                                text={`Gain Quality`}
-                              />
-                            </Grid>
-                            <Grid item sm={4}>
-                              {" "}
-                              <WaveText
-                                className="f3"
-                                delay={10}
-                                text={`Gain Reliability`}
-                              />
-                            </Grid>
-                            <Grid item sm={4}>
-                              {" "}
-                              <WaveText
-                                className="f3"
-                                delay={10}
-                                text={`Gain Flexibility`}
-                              />
-                            </Grid>
-                          </Grid>
-                        </Grid>
+                        </LazyLoad>
                       </Grid>
-                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                      <Grid
+                        item
+                        sm={12}
+                        style={{
+                          marginTop: "30px",
+                          backgroundColor: "transparent",
+                          fontWeight: "bold",
+                          fontStyle: "normal",
+                          textDecoration: "none",
+                          fontSize: "16pt",
+                          fontFamily:
+                            "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                          lineHeight: "26px",
+                        }}
+                      >
                         <WaveText
-                          className="f3"
                           delay={10}
                           text={`No need to start building from zero. No need to start from scratch. You are already`}
                         />
                         <WaveText
-                          className="f3"
                           delay={20}
                           text={`ahead with Noctem developer tools. If your not currently building in C#, here is`}
                         />
                         <WaveText
-                          className="f3"
                           delay={30}
                           text={`another excellent reason to add this to your tech stack.`}
                         />
                       </Grid>
-                      <Grid item sm={12} style={{ marginTop: "30px" }}>
+                      <Grid
+                        item
+                        sm={12}
+                        style={{
+                          marginTop: "30px",
+                          backgroundColor: "transparent",
+                          fontWeight: "bold",
+                          fontStyle: "normal",
+                          textDecoration: "none",
+                          fontSize: "16pt",
+                          fontFamily:
+                            "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                          lineHeight: "26px",
+                        }}
+                      >
                         <WaveText
-                          className="f2"
                           delay={10}
                           text={`C# - A state of the art, open-source, cross-platform programming language. `}
                         />
@@ -505,8 +554,12 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                             sm={4}
                             style={{
                               textAlign: "center",
-                              fontSize: "20px",
                               color: "rgb(192, 0, 0)",
+                              fontWeight: "bold",
+                              fontSize: "16pt",
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "26px",
                             }}
                           >
                             <p>New</p>
@@ -540,10 +593,19 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                               lineHeight: "26px",
                             }}
                           >
-                            <p>New</p>
-                            <p>Project Evolv 2.0</p>
-                            <p>{"Version 2.0 & Version 3.0"}</p>
-                            <p>{"More than Cross Platform"}</p>
+                            <p>Project Evolv Version 1.0 Free to Students </p>
+                            <div style={{ fontSize: "9pt" }}>
+                              <p>
+                                {
+                                  "(link w/go to pricing w/structures to give customers free mos and"
+                                }
+                              </p>
+                              <p>
+                                {
+                                  "end a yr subscription as they prepay w/annual subscriptions)"
+                                }
+                              </p>
+                            </div>
                           </Grid>
                           <Grid item sm={4}>
                             {" "}
@@ -571,10 +633,8 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                               lineHeight: "30px",
                             }}
                           >
-                            <p>New</p>
-                            <p>Project Evolv 2.0</p>
-                            <p>{"Version 2.0 & Version 3.0"}</p>
-                            <p>{"More than Cross Platform"}</p>
+                            <p>Project Evolv Version 3.0</p>
+                            <p>To be showcased for Transcend 2023</p>
                           </Grid>
                           <Grid item sm={4}>
                             {" "}
@@ -602,28 +662,665 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                               lineHeight: "36px",
                             }}
                           >
-                            <p>New</p>
-                            <p>Project Evolv 2.0</p>
-                            <p>{"Version 2.0 & Version 3.0"}</p>
-                            <p>{"More than Cross Platform"}</p>
+                            <p> C# Experts specializing in </p>
+                            <p>{"tools & services for C# developers"}</p>
                           </Grid>
                           <Grid item sm={4}>
                             {" "}
                           </Grid>
                         </Grid>
                       </Grid>
-                      {<Footer />}
+                      <Grid item sm={12} style={{ marginTop: "40px" }}>
+                        <Grid container>
+                          <Grid item sm={3}>
+                            {" "}
+                          </Grid>
+                          <Grid
+                            item
+                            sm={6}
+                            style={{
+                              marginTop: "40px",
+                              textAlign: "center",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "42px",
+                            }}
+                          >
+                            <Grid container>
+                              <Grid item sm={12}>
+                                <p
+                                  style={{
+                                    textDecoration: "underline",
+                                    fontSize: "26pt",
+                                  }}
+                                  id={"services"}
+                                >
+                                  Services:
+                                </p>
+                              </Grid>
+                              <Grid item sm={12} style={{ marginTop: "30px" }}>
+                                <Grid container>
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        fontSize: "23pt",
+                                      }}
+                                    >
+                                      {"1) Developer Tools & Subscriptions"}
+                                    </p>
+                                  </Grid>
+
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        opacity: "0.94",
+                                        color: "rgb(255, 0, 0)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "22pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "36px",
+                                      }}
+                                    >
+                                      {"Project Evolv"}
+                                    </p>
+                                  </Grid>
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "12pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "20px",
+                                      }}
+                                    >
+                                      {"Our C# essential tool kit "}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Navigation Feature/s"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Themes, Icons, Control Feature/s"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Search Feature/s"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Setting Feature/s"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Help Feature/s"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                      backgroundColor: "transparent",
+                                      fontWeight: "bold",
+                                      fontStyle: "normal",
+                                      textDecoration: "none",
+                                      fontSize: "11pt",
+                                      fontFamily:
+                                        "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                      lineHeight: "18px",
+                                    }}
+                                  >
+                                    <p>
+                                      {
+                                        "Click here for more license & subscription details"
+                                      }
+                                    </p>
+                                    <p>
+                                      {
+                                        "This link above will take them to Project EvoLV web site. "
+                                      }
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                      opacity: "0.94",
+                                      color: "rgb(255, 0, 0)",
+                                      backgroundColor: "transparent",
+                                      fontWeight: "bold",
+                                      fontStyle: "normal",
+                                      textDecoration: "none",
+                                      fontSize: "22pt",
+                                      fontFamily:
+                                        "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                      lineHeight: "36px",
+                                    }}
+                                  >
+                                    <span>{"Ipad Framework"}</span>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                      backgroundColor: "transparent",
+                                      fontWeight: "bold",
+                                      fontStyle: "normal",
+                                      textDecoration: "none",
+                                      fontSize: "12pt",
+                                      fontFamily:
+                                        "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                      lineHeight: "20px",
+                                    }}
+                                  >
+                                    <span>
+                                      {
+                                        "(We will be giving you text for this area in the near future.)"
+                                      }
+                                    </span>
+                                  </Grid>
+                                </Grid>
+                              </Grid>
+                              <Grid item sm={12} style={{ marginTop: "30px" }}>
+                                <Grid container>
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        fontSize: "23pt",
+                                      }}
+                                    >
+                                      {"2) Contract & Consulting Work "}
+                                    </p>
+                                  </Grid>
+
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      backgroundColor: "transparent",
+                                      fontWeight: "bold",
+                                      fontStyle: "normal",
+                                      textDecoration: "none",
+                                      fontSize: "15pt",
+                                      fontFamily:
+                                        "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                      lineHeight: "36px",
+                                    }}
+                                  >
+                                    <p>
+                                      {
+                                        "We are currently available for contract work. Call to set up an appointment to discuss"
+                                      }
+                                    </p>
+                                    <p>
+                                      {
+                                        "your project and goals to see if we would be a good fit for one another."
+                                      }
+                                    </p>
+                                  </Grid>
+                                </Grid>
+                              </Grid>
+                              <Grid item sm={12} style={{ marginTop: "30px" }}>
+                                <Grid container>
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        fontSize: "23pt",
+                                      }}
+                                    >
+                                      {"3) Workshops & Events"}
+                                    </p>
+                                  </Grid>
+
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{ marginTop: "20px" }}
+                                  >
+                                    <p
+                                      style={{
+                                        opacity: "0.94",
+                                        color: "rgb(255, 0, 0)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "22pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "36px",
+                                      }}
+                                    >
+                                      {"Workshops:"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{ marginTop: "20px" }}
+                                  >
+                                    <p
+                                      style={{
+                                        backgroundColor: "transparent",
+                                        fontWeight: "normal",
+                                        fontStyle: "italic",
+                                        textDecoration: "none",
+                                        fontSize: "18pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "29px",
+                                      }}
+                                    >
+                                      {"Quarterly online workshops for users"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{ marginTop: "30px" }}
+                                  >
+                                    <p
+                                      style={{
+                                        opacity: "0.94",
+                                        color: "rgb(255, 0, 0)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "22pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "36px",
+                                      }}
+                                    >
+                                      {"Events:"}
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "30px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        color: "rgb(178, 161, 199)",
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "20pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "33px",
+                                      }}
+                                    >
+                                      {"Transcend 2023"}
+                                    </p>
+                                  </Grid>
+                                  <Grid item sm={12}>
+                                    <p
+                                      style={{
+                                        backgroundColor: "transparent",
+                                        fontWeight: "normal",
+                                        fontStyle: "italic",
+                                        textDecoration: "none",
+                                        fontSize: "18pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "29px",
+                                      }}
+                                    >
+                                      {
+                                        "Our First Annual Project Evolv conference  "
+                                      }
+                                    </p>
+                                  </Grid>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    style={{
+                                      marginTop: "20px",
+                                    }}
+                                  >
+                                    <p
+                                      style={{
+                                        backgroundColor: "transparent",
+                                        fontWeight: "bold",
+                                        fontStyle: "normal",
+                                        textDecoration: "none",
+                                        fontSize: "18pt",
+                                        fontFamily:
+                                          "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                        lineHeight: "29px",
+                                      }}
+                                    >
+                                      {"Full details to follow soon"}
+                                    </p>
+                                  </Grid>
+                                </Grid>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                          <Grid item sm={3}>
+                            {" "}
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "40px" }}>
+                        <Grid container>
+                          <Grid
+                            item
+                            sm={12}
+                            style={{
+                              textAlign: "center",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "42px",
+                            }}
+                          >
+                            <Grid container>
+                              <Grid item sm={12}>
+                                <p
+                                  style={{
+                                    textDecoration: "underline",
+                                    fontSize: "26pt",
+                                  }}
+                                  id={"investors"}
+                                >
+                                  Investors:
+                                </p>
+                              </Grid>
+                              <Grid
+                                item
+                                sm={12}
+                                style={{
+                                  marginTop: "20px",
+                                  backgroundColor: "transparent",
+                                  fontWeight: "normal",
+                                  fontStyle: "normal",
+                                  textDecoration: "none",
+                                  fontSize: "12pt",
+                                  fontFamily:
+                                    "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                <p>
+                                  {
+                                    "Will go to a form that they need to fill out after they have put in a full name, phone, email and best time to reach"
+                                  }
+                                </p>
+                                <p>
+                                  {
+                                    "them. Their would be an auto generated message that information will be sent to their email once information has"
+                                  }
+                                </p>
+                                <p>
+                                  {
+                                    "been confirmed and thanking them for their interest."
+                                  }
+                                </p>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "40px" }}>
+                        <Grid container>
+                          <Grid
+                            item
+                            sm={12}
+                            style={{
+                              textAlign: "center",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "42px",
+                            }}
+                          >
+                            <Grid container>
+                              <Grid item sm={12}>
+                                <p
+                                  id={"employment"}
+                                  style={{
+                                    textDecoration: "underline",
+                                    fontSize: "26pt",
+                                  }}
+                                >
+                                  Employment:
+                                </p>
+                              </Grid>
+                              <Grid
+                                item
+                                sm={12}
+                                style={{
+                                  marginTop: "20px",
+                                  backgroundColor: "transparent",
+                                  fontWeight: "normal",
+                                  fontStyle: "normal",
+                                  textDecoration: "none",
+                                  fontSize: "12pt",
+                                  fontFamily:
+                                    "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                <p>{"Add list of openings here"}</p>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item sm={12} style={{ marginTop: "40px" }}>
+                        <Grid container>
+                          <Grid
+                            item
+                            sm={12}
+                            style={{
+                              textAlign: "center",
+                              backgroundColor: "transparent",
+                              fontWeight: "bold",
+                              fontStyle: "normal",
+
+                              fontFamily:
+                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              lineHeight: "42px",
+                            }}
+                          >
+                            <Grid container>
+                              <Grid item sm={12}>
+                                <p
+                                  style={{
+                                    textDecoration: "underline",
+                                    fontSize: "26pt",
+                                  }}
+                                  id={"contactus"}
+                                >
+                                  Contact Us:
+                                </p>
+                              </Grid>
+                              <Grid
+                                item
+                                sm={12}
+                                style={{
+                                  marginTop: "20px",
+                                  backgroundColor: "transparent",
+                                  fontWeight: "normal",
+                                  fontStyle: "normal",
+                                  textDecoration: "none",
+                                  fontSize: "12pt",
+                                  fontFamily:
+                                    "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  lineHeight: "20px",
+                                }}
+                              >
+                                <p>{"Use 800 #"}</p>
+                                <p>{"IL suite addres"}</p>
+                                <p>{"IL area code phone number"}</p>
+                                <p>{"info@NCTMCO.com"}</p>
+                              </Grid>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid
+                        item
+                        sm={12}
+                        style={{ marginTop: "60px", marginBottom: "40px" }}
+                      >
+                        <div
+                          style={{
+                            backgroundColor: "transparent",
+                            fontWeight: "normal",
+                            fontStyle: "normal",
+                            textDecoration: "none",
+                            fontSize: "14pt",
+                            fontFamily:
+                              "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                            lineHeight: "25px",
+                          }}
+                        >
+                          <p>{"Noctem Computing, LLC 2019 "}</p>
+                          <p>
+                            {
+                              "Privacy & other disclosure statements to be added here for legal purposes."
+                            }
+                          </p>
+                        </div>
+                      </Grid>
                     </>
                   )}
                 </Grid>
               </>
             )}
           </Grid>
+          {/* <Grid item sm={12} style={{ marginTop: "40px" }}>
+            {<Footer />}
+          </Grid> */}
         </Grid>
       </Box>
 
-      {/* {showreelActive && device && device === `desktop` && (
-        <div className="index-page__modal animation-appear w-full h-full fixed top-0 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black">
+      {showreelActive && device && device === `desktop` && (
+        <div className="index-page__modal animation-appear w-full h-full fixed top-5 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black">
           <CursorInteractive mode="close" text="Close">
             <button
               type="button"
@@ -638,10 +1335,13 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             ref={showReelRef as any}
             autoPlay
             className="w-full relative block"
-            src="https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+            src={
+              commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
+              // "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+            }
           />
         </div>
-      )} */}
+      )}
 
       {/* <div id="services">services</div> */}
       {/* <div className="index-page w-full relative bg-black text-white">
@@ -878,32 +1578,6 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             </div>
           </div>
         </ScreenHeight> */}
-
-      <section
-        className={`index-page__showreel ${
-          loading ? `` : `loaded`
-        } w-full relative block`}
-      >
-        <CursorInteractive mode="hover" text="Play">
-          <button
-            type="button"
-            className="w-full h-full absolute top-0 right-0 bottom-0 left-0 z-20"
-            onClick={showVideo}
-          ></button>
-        </CursorInteractive>
-
-        {/* <video
-            autoPlay
-            className="w-full relative block"
-            loop
-            muted
-            playsInline
-            src={
-              commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
-            }
-            // src="https://player.vimeo.com/external/459243941.hd.mp4?s=ffc9d4d0429a43a3bb41002fe42d16a1eaa3b406&profile_id=175"
-          /> */}
-      </section>
 
       {/* {!loading && (
           <>
