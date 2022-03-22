@@ -29,7 +29,7 @@ import commonUtil from "../utils/commonUtil";
 import { Box, Grid } from "@material-ui/core";
 import Header from "../components/Header";
 import LazyLoad from "react-lazyload";
-
+import ReactPlayer from "react-player";
 // import videoUrl from "assets/videos/PEshortcommercial.mp4";
 
 // import { graphql } from "gatsby";
@@ -373,7 +373,20 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                             onClick={showVideo}
                           ></button>
                         </CursorInteractive> */}
-                        <video
+                        <ReactPlayer
+                          className="w-full relative block"
+                          width={"100%"}
+                          height={"100%"}
+                          style={{
+                            display: "block",
+                          }}
+                          onClick={showVideo}
+                          playing={true}
+                          loop={true}
+                          muted={true}
+                          url="assets/videos/PEshortcommercial.mp4"
+                        />
+                        {/* <video
                           onClick={showVideo}
                           autoPlay
                           className="w-full relative block"
@@ -386,7 +399,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           //   "assets/videos/PEshortcommercial.mp4"
                           // }
                           // src="https://player.vimeo.com/external/459243941.hd.mp4?s=ffc9d4d0429a43a3bb41002fe42d16a1eaa3b406&profile_id=175"
-                        />
+                        /> */}
                       </Grid>
 
                       <Grid item sm={12} style={{ marginTop: "50px" }}>
@@ -1322,7 +1335,10 @@ const IndexApp = ({ data, location }: IIndexProp) => {
       </Box>
 
       {showreelActive && device && device === `desktop` && (
-        <div className="index-page__modal animation-appear w-full h-full fixed top-5 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black">
+        <div
+          style={{ marginTop: "100px" }}
+          className="index-page__modal animation-appear w-full h-full fixed top-15 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black"
+        >
           <CursorInteractive mode="close" text="Close">
             <button
               type="button"
@@ -1333,7 +1349,18 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             </button>
           </CursorInteractive>
 
-          <video
+          <ReactPlayer
+            className="w-full relative block"
+            width={"100%"}
+            height={"100%"}
+            style={{
+              display: "block",
+            }}
+            onClick={showVideo}
+            playing={true}
+            url="assets/videos/PEshortcommercial.mp4"
+          />
+          {/* <video
             ref={showReelRef as any}
             autoPlay
             className="w-full relative block"
@@ -1342,7 +1369,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             //   commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
             //   // "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
             // }
-          />
+          /> */}
         </div>
       )}
 
