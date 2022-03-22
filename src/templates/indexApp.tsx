@@ -29,6 +29,9 @@ import commonUtil from "../utils/commonUtil";
 import { Box, Grid } from "@material-ui/core";
 import Header from "../components/Header";
 import LazyLoad from "react-lazyload";
+
+// import videoUrl from "assets/videos/PEshortcommercial.mp4";
+
 // import { graphql } from "gatsby";
 
 // import { AppDataContext } from '../context/AppDataContext';
@@ -377,10 +380,11 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           loop
                           muted
                           playsInline
-                          src={
-                            commonUtil.GetLocalPath() +
-                            "assets/videos/PEshortcommercial.mp4"
-                          }
+                          src={"assets/videos/PEshortcommercial.mp4"}
+                          // src={
+                          //   commonUtil.GetLocalPath() +
+                          //   "assets/videos/PEshortcommercial.mp4"
+                          // }
                           // src="https://player.vimeo.com/external/459243941.hd.mp4?s=ffc9d4d0429a43a3bb41002fe42d16a1eaa3b406&profile_id=175"
                         />
                       </Grid>
@@ -1333,10 +1337,11 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             ref={showReelRef as any}
             autoPlay
             className="w-full relative block"
-            src={
-              commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
-              // "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
-            }
+            src={"assets/videos/PEshortcommercial.mp4"}
+            // src={
+            //   commonUtil.GetLocalPath() + "assets/videos/PEshortcommercial.mp4"
+            //   // "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+            // }
           />
         </div>
       )}
