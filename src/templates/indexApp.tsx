@@ -26,11 +26,9 @@ import Footer from "../components/Footer";
 import { DocumentContext } from "../context/DocumentContext";
 import { DataDto } from "../models/dataDto";
 import commonUtil from "../utils/commonUtil";
-import { Animated } from "react-animated-css";
-import { Animate, AnimateGroup } from "react-simple-animate";
-import LazyLoad from "react-lazyload";
 import { Box, Grid } from "@material-ui/core";
 import Header from "../components/Header";
+import LazyLoad from "react-lazyload";
 // import { graphql } from "gatsby";
 
 // import { AppDataContext } from '../context/AppDataContext';

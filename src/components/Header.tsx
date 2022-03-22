@@ -7,7 +7,6 @@ import Scrambler from "./Scrambler";
 import Button from "./Button";
 import { AppDataContext } from "../context/AppDataContext";
 import { Link } from "react-router-dom";
-import Image from "rc-image";
 // import { useTimeout } from "~utils/hooks";
 
 //for loading images from local folder

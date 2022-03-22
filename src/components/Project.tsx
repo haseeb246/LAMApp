@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
 import { DocumentContext } from "../context/DocumentContext";
 import WaveText from "./WaveText";
 import Video from "./Video";

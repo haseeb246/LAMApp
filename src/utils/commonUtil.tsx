@@ -1,5 +1,4 @@
 // import _ from "lodash";
-import { Guid } from "guid-typescript";
 import * as React from "react";
 
 import { appData } from "./appData";
@@ -94,7 +93,7 @@ export default class commonUtil {
   }
 
   public static getNewGuid(): string {
-    return Guid.create().toString();
+    return new Date().getTime().toString(); //;Guid.create().toString();
   }
   public static getUniqueKey(index: number = 0): string {
     return commonUtil.getNewGuid() + "_" + index;
