@@ -373,7 +373,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                             onClick={showVideo}
                           ></button>
                         </CursorInteractive> */}
-                        <ReactPlayer
+                        {/* <ReactPlayer
                           className="w-full relative block"
                           width={"100%"}
                           height={"100%"}
@@ -385,7 +385,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           loop={true}
                           muted={true}
                           url="assets/videos/PEshortcommercial.mp4"
-                        />
+                        /> */}
                         {/* <video
                           onClick={showVideo}
                           autoPlay
@@ -1349,7 +1349,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             </button>
           </CursorInteractive>
 
-          <ReactPlayer
+          {/* <ReactPlayer
             className="w-full relative block"
             width={"100%"}
             height={"100%"}
@@ -1359,7 +1359,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             onClick={showVideo}
             playing={true}
             url="assets/videos/PEshortcommercial.mp4"
-          />
+          /> */}
           {/* <video
             ref={showReelRef as any}
             autoPlay
