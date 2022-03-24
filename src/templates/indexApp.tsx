@@ -259,7 +259,12 @@ const IndexApp = ({ data, location }: IIndexProp) => {
           <Grid item sm={12} id="header">
             <Header />
           </Grid>
-          <Grid item sm={12} id="home" style={{ minHeight: "600px" }}>
+          <Grid
+            item
+            sm={12}
+            id="home"
+            style={{ minHeight: "600px", marginTop: "250px" }}
+          >
             {device && device === `desktop` && (
               <>
                 <Grid container>
@@ -319,7 +324,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
 
                   {afterLoading && isShowLineOfCode && (
                     <>
-                      <Grid item sm={12} style={{ marginTop: "15px" }}>
+                      <Grid item sm={12} style={{ marginTop: "5px" }}>
                         <div
                           className={"animate__animated animate__backInLeft"}
                           style={{
@@ -338,7 +343,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           />
                         </div>
                       </Grid>
-                      <Grid item sm={12} style={{ marginTop: "15px" }}>
+                      <Grid item sm={12} style={{ marginTop: "5px" }}>
                         <div
                           className={"animate__animated  animate__backInRight"}
                           style={{
