@@ -373,7 +373,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                             onClick={showVideo}
                           ></button>
                         </CursorInteractive> */}
-                        {/* <ReactPlayer
+                        <ReactPlayer
                           className="w-full relative block"
                           width={"100%"}
                           height={"100%"}
@@ -384,8 +384,11 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                           playing={true}
                           loop={true}
                           muted={true}
-                          url="assets/videos/PEshortcommercial.mp4"
-                        /> */}
+                          url={
+                            "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+                          }
+                          // url="assets/videos/PEshortcommercial.mp4"
+                        />
                         {/* <video
                           onClick={showVideo}
                           autoPlay
@@ -1349,7 +1352,7 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             </button>
           </CursorInteractive>
 
-          {/* <ReactPlayer
+          <ReactPlayer
             className="w-full relative block"
             width={"100%"}
             height={"100%"}
@@ -1358,8 +1361,11 @@ const IndexApp = ({ data, location }: IIndexProp) => {
             }}
             onClick={showVideo}
             playing={true}
-            url="assets/videos/PEshortcommercial.mp4"
-          /> */}
+            url={
+              "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+            }
+            // url="assets/videos/PEshortcommercial.mp4"
+          />
           {/* <video
             ref={showReelRef as any}
             autoPlay
