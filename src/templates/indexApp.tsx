@@ -1084,7 +1084,9 @@ const IndexApp = ({ data, location }: IIndexProp) => {
                                     display: "block",
                                   }}
                                   // playing={true}
-                                  url={"https://youtu.be/zBjJUV-lzHo"}
+                                  url={
+                                    "https://player.vimeo.com/external/449980268.hd.mp4?s=6675db04d19568b8f79e9d590190946ba87d7bfe&profile_id=175"
+                                  }
                                   // url="assets/videos/PEshortcommercial.mp4"
                                 />
                               </Grid>
