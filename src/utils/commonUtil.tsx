@@ -18,6 +18,7 @@ export default class commonUtil {
   public static getlocalStorage(name: string): any {
     let item = localStorage.getItem(name);
     if (item && typeof item == "string") {
+      debugger;
       return JSON.parse(item);
     } else {
       return item;

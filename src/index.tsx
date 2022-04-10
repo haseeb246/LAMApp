@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { WrapRootElement } from "./wrapRootElement";
 import "animate.css";
+import { BrowserRouter } from "react-router-dom";
 
 {
   /* <link
@@ -15,15 +16,13 @@ import "animate.css";
 
 </link> */
 }
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-/>;
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <WrapRootElement> */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
     {/* </WrapRootElement> */}
   </React.StrictMode>,
   document.getElementById("root")
