@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/LAMApp/static/css/main.c2e6eea0.css",
+    "main.js": "/LAMApp/static/js/main.405d2c31.js",
+    "static/js/27.d92f1486.chunk.js": "/LAMApp/static/js/27.d92f1486.chunk.js",
+    "static/media/fk-grotesk-regular-eot": "/LAMApp/static/media/fk-grotesk-regular-81bc7bfcb65f7cb771e591d9c903b37f.5a98bbc8f4e4b035e763.eot",
+    "static/media/fk-grotesk-regular-ttf": "/LAMApp/static/media/fk-grotesk-regular-1ee358930980e3113679d817debc9dfd.5e295ce4d809aee246cc.ttf",
+    "static/media/fk-display-regular-eot": "/LAMApp/static/media/fk-display-regular-5fff5c46a760a19bf9065386eaf26cef.b4ae7c7d23bf35c8b568.eot",
+    "static/media/fk-display-regular-ttf": "/LAMApp/static/media/fk-display-regular-4777f0becb4ac96503fa003f53be5cc7.fd3b304b1f2dd1b276e3.ttf",
+    "static/media/fk-grotesk-monospaced-eot": "/LAMApp/static/media/fk-grotesk-monospaced-5864a2d55fc3a3c49695d9fbbb798b3e.b06a3e9e46ff829b76d6.eot",
+    "static/media/fk-grotesk-monospaced-ttf": "/LAMApp/static/media/fk-grotesk-monospaced-34f10194e28cacb7f7bebc76e9e9f5cc.ebc12cc1f1a8a9e2278f.ttf",
+    "static/media/fk-display-regular-svg": "/LAMApp/static/media/fk-display-regular-fd03895ef2c95a6db9749ed4053911e1.bbe257446d46c3166e70.svg",
+    "static/media/fk-grotesk-regular-svg": "/LAMApp/static/media/fk-grotesk-regular-38eaece4a4a60a2a1f0b09bc46032896.3b38e5c98d58e73f6caa.svg",
+    "static/media/fk-grotesk-monospaced-svg": "/LAMApp/static/media/fk-grotesk-monospaced-3cec821d2f07443dde376d9ca677df72.276073bf5dbab7d79b62.svg",
+    "static/media/fk-grotesk-regular-woff": "/LAMApp/static/media/fk-grotesk-regular-7c184a2620cc260fcc2d26f2161cd251.00ec71bd77396b05fb9b.woff",
+    "static/media/fk-grotesk-monospaced-woff": "/LAMApp/static/media/fk-grotesk-monospaced-486cd41f39a0acbd26693495e43a9d92.5da7863938d61fb622fc.woff",
+    "static/media/fk-display-regular-woff": "/LAMApp/static/media/fk-display-regular-97210fc775bc6d7ac8513fa2239d69b3.dea96315aa1889dbf3d2.woff",
+    "index.html": "/LAMApp/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.c2e6eea0.css",
+    "static/js/main.405d2c31.js"
+  ]
+}
