@@ -15,7 +15,7 @@ function App() {
           {/* <Routes> */}
           {/* <Route path="/" Component={IndexApp} /> */}
           <Fragment>
-            <IndexApp data={pageData.result.data} location={window.location} />
+            <IndexApp />
           </Fragment>
           {/* </Routes> */}
         </AppDataProvider>
