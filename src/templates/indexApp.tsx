@@ -184,7 +184,7 @@ const IndexApp = ({}: IIndexProp) => {
     }, 26000);
     setTimeout(() => {
       setAfterLoading(true);
-    }, 27000);
+    }, 100);
 
     return () => {
       window.removeEventListener("resize", () => setResponsiveness());
@@ -199,11 +199,11 @@ const IndexApp = ({}: IIndexProp) => {
 
   setTimeout(() => {
     setHeaderVisible(true);
-  }, 2000);
+  }, 100);
 
   setTimeout(() => {
     setTouchLoaded(true);
-  }, 1000);
+  }, 100);
   //
 
   // useEffect(() => {
@@ -548,7 +548,7 @@ const IndexApp = ({}: IIndexProp) => {
                       <h2
                         className={
                           "animate__animated animate__backInRight " +
-                          (deviceView === "mobile" ? "b2" : "f2")
+                          (deviceView === "mobile" ? "title-sm" : "title-lg")
                         }
                         style={{
                           textAlign: "right",
@@ -558,8 +558,8 @@ const IndexApp = ({}: IIndexProp) => {
                       >
                         {"Developer Tools & Subscriptions"}
                       </h2>
-                      <h2
-                        className={deviceView === "mobile" ? "b3" : "b2"}
+                      <div
+                        className={deviceView === "mobile" ? "b2-desc-sm" : "b2-desc-lg"}
                         style={{
                           textAlign: "right",
                           color: "rgb(127, 96, 0)",
@@ -575,7 +575,7 @@ const IndexApp = ({}: IIndexProp) => {
                       >
                         C# Experts specializing in <br />
                         tools for C# developers
-                      </h2>
+                      </div>
                     </Grid>
                   </Grid>
 

@@ -1419,6 +1419,7 @@ video {
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
+
 @media screen and (max-width: 767px) {
   .f2 {
     font-size: 7.9925vw;
@@ -1446,6 +1447,7 @@ video {
   font-size: 1.251vw;
   line-height: 1.25;
 }
+
 @media screen and (max-width: 767px) {
   .b2 {
     font-size: 4.17vw;
@@ -1453,12 +1455,13 @@ video {
 }
 .b3 {
   font-family: FK Grotesk Regular, Arial, Helvetica, sans-serif;
-  font-size: 1.0425vw;
+  /* font-size: 1.0425vw; */
   line-height: 1.2;
 }
 @media screen and (max-width: 767px) {
   .b3 {
-    font-size: 2.919vw;
+    font-size: calc(4.448vw);
+    line-height: 140%;
   }
 }
 .caption {
@@ -4843,4 +4846,25 @@ button:focus {
 }
 :root {
   --swiper-theme-color: #007aff;
+}
+
+
+/* css added by rashid */
+.title-lg {
+  font-size: calc(3.336vw);
+  line-height: 120%;
+}
+.title-sm {
+  font-size: calc(10.0775vw);
+  line-height: 120%;
+}
+.b2-desc-lg{
+  font-size: calc(1.112vw);
+  line-height: 140%;
+  white-space: pre-line;
+}
+.b2-desc-sm {
+  font-size: calc(4.448vw);
+  line-height: 140%;
+  white-space: pre-line;
 }
