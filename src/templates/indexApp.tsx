@@ -202,11 +202,11 @@ const IndexApp = ({}: IIndexProp) => {
 
   setTimeout(() => {
     setHeaderVisible(true);
-  }, 2000);
+  }, 100);
 
   setTimeout(() => {
     setTouchLoaded(true);
-  }, 1000);
+  }, 100);
   //
 
   // useEffect(() => {
