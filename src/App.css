@@ -1455,7 +1455,7 @@ video {
 }
 .b3 {
   font-family: FK Grotesk Regular, Arial, Helvetica, sans-serif;
-  /* font-size: 1.0425vw; */
+   font-size: 1.0425vw; 
   line-height: 1.2;
 }
 @media screen and (max-width: 767px) {
@@ -1463,7 +1463,7 @@ video {
     font-size: calc(4.448vw);
     line-height: 140%;
   }
-} */
+} 
 .caption {
   font-family: "FK Grotesk Monospaced", Courier New, Courier, monospace;
   font-size: 0.834vw;
@@ -1474,6 +1474,7 @@ video {
     font-size: 2.919vw;
   }
 }
+*/
 .mono {
   font-family: "FK Grotesk Monospaced", Courier New, Courier, monospace;
 }
