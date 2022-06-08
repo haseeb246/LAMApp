@@ -10,7 +10,7 @@ import React, {
 } from "react";
 // import { graphql } from "gatsby";
 import { AppDataContext, IAppDataContext } from "../context/AppDataContext";
-import { useKeyPress, useTimeout } from "../utils/hooks";
+import { useTimeout } from "../utils/hooks";
 // import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import Scrambler from "../components/Scrambler";
@@ -32,6 +32,8 @@ import ReactPlayer from "react-player";
 import AppHeader from "../components/appHeader";
 import { Grid, Box } from "@mui/material";
 import { textAlign } from "@mui/system";
+import Theme from "../components/common/Theme";
+import { isMobile, isDesktop } from "react-device-detect";
 // import videoUrl from "assets/videos/PEshortcommercial.mp4";
 
 // import { graphql } from "gatsby";
@@ -184,18 +186,19 @@ const IndexApp = ({}: IIndexProp) => {
     }, 26000);
     setTimeout(() => {
       setAfterLoading(true);
-    }, 27000);
+      // }, 27000);
+    }, 200);
 
     return () => {
       window.removeEventListener("resize", () => setResponsiveness());
     };
   }, []);
 
-  const escKeyPressed = useKeyPress(`Escape`);
+  // const escKeyPressed = useKeyPress(`Escape`);
 
-  useEffect(() => {
-    setShowreelActive(false);
-  }, [escKeyPressed]);
+  // useEffect(() => {
+  //   setShowreelActive(false);
+  // }, [escKeyPressed]);
 
   setTimeout(() => {
     setHeaderVisible(true);
@@ -216,6 +219,7 @@ const IndexApp = ({}: IIndexProp) => {
 
   return (
     <>
+      <Theme />
       {/* <h1 className="animate__animated animate__bounce">
           An animated element
         </h1>
@@ -311,16 +315,16 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowProgCode && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
-                    className={"animate__animated animate__backInRight"}
+                    className={"animate__animated animate__backInRight g4"}
                     style={{
-                      fontWeight: "bold",
-                      fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                      // fontWeight: "bold",
+                      // fontSize: isMobile ? "6vw" : "4vw",
                       animationDuration: "2.5s",
                       animationDelay: "0.3s",
                     }}
                   >
                     <Scrambler
-                      className="whitespace-no-wrap"
+                      className="whitespace-no-wrap g3"
                       delay={100}
                       iterations={35}
                       text={scrambleCode}
@@ -332,10 +336,11 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowNoctemLoading && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
+                    className="g4"
                     style={{
-                      fontWeight: "bold",
+                      // fontWeight: "bold",
                       color: "white",
-                      fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                      // fontSize: isMobile ? "6vw" : "4vw",
                       animationDuration: "2.5s",
                       animationDelay: "1s",
                     }}
@@ -353,10 +358,15 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowFinalCode && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
-                    className={"animate__animated animate__backInRight"}
+                    className={
+                      "animate__animated animate__backInRight " +
+                      isShowFinalCode
+                        ? "g5"
+                        : "g4"
+                    }
                     style={{
-                      fontWeight: "bold",
-                      fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                      // fontWeight: "bold",
+                      // fontSize: isMobile ? "6vw" : "4vw",
                       animationDuration: "2.5s",
                       animationDelay: "1s",
                     }}
@@ -423,7 +433,7 @@ const IndexApp = ({}: IIndexProp) => {
                         <h2
                           className={
                             "animate__animated animate__backInRight " +
-                            (deviceView === "mobile" ? "b1" : "f2")
+                            (isMobile ? "h2" : "h2")
                           }
                           style={{
                             animationDuration: "2s",
@@ -437,7 +447,7 @@ const IndexApp = ({}: IIndexProp) => {
                         <h2
                           className={
                             "animate__animated animate__backInRight " +
-                            (deviceView === "mobile" ? "b1" : "f2")
+                            (isMobile ? "h2" : "h2")
                           }
                           style={{
                             animationDuration: "2s",
@@ -459,7 +469,7 @@ const IndexApp = ({}: IIndexProp) => {
                         {" "}
                       </Grid>
                       <Grid item xs={12} md={6}>
-                        <div className={deviceView === "mobile" ? "b3" : "b2"}>
+                        <p className={isMobile ? "b2" : "b2"}>
                           Every major technological advancement brings about a
                           period of disruption. Disruption has the ability to
                           create a firm foundation for change. Many people fear
@@ -473,7 +483,7 @@ const IndexApp = ({}: IIndexProp) => {
                           their imaginative ideas to fruition. With our
                           consulting and contracting services we will help your
                           team to be more efficient and cost effective .
-                        </div>
+                        </p>
                       </Grid>
                     </Grid>
                   </Grid>
@@ -501,9 +511,9 @@ const IndexApp = ({}: IIndexProp) => {
                                 
                               </h2> */}
                     <AppearOnScroll once={false}>
-                      <h2
+                      <h3
                         id={"services"}
-                        className={"animate__animated animate__backInRight f2"}
+                        className={"animate__animated animate__backInRight h1"}
                         style={{
                           animationDuration: "2s",
                           animationDelay: "100",
@@ -517,7 +527,7 @@ const IndexApp = ({}: IIndexProp) => {
                           iterations={20}
                           text={`Services:`}
                         />
-                      </h2>
+                      </h3>
                     </AppearOnScroll>
                   </Grid>
 
@@ -545,10 +555,10 @@ const IndexApp = ({}: IIndexProp) => {
                         paddingTop: "150px",
                       }}
                     >
-                      <h2
+                      <p
                         className={
                           "animate__animated animate__backInRight " +
-                          (deviceView === "mobile" ? "b2" : "f2")
+                          (isMobile ? "b1" : "b1")
                         }
                         style={{
                           textAlign: "right",
@@ -557,13 +567,13 @@ const IndexApp = ({}: IIndexProp) => {
                         }}
                       >
                         {"Developer Tools & Subscriptions"}
-                      </h2>
-                      <h2
-                        className={deviceView === "mobile" ? "b3" : "b2"}
+                      </p>
+                      <p
+                        className={isMobile ? "b2" : "b2"}
                         style={{
                           textAlign: "right",
-                          color: "rgb(127, 96, 0)",
-                          backgroundColor: "transparent",
+                          // color: "rgb(127, 96, 0)",
+                          // backgroundColor: "transparent",
                           // fontWeight: "bold",
                           // fontStyle: "normal",
                           // textDecoration: "none",
@@ -575,7 +585,7 @@ const IndexApp = ({}: IIndexProp) => {
                       >
                         C# Experts specializing in <br />
                         tools for C# developers
-                      </h2>
+                      </p>
                     </Grid>
                   </Grid>
 
@@ -599,34 +609,38 @@ const IndexApp = ({}: IIndexProp) => {
                             <Grid container>
                               <Grid item xs={12}>
                                 <p
-                                  style={{
-                                    opacity: "0.94",
-                                    color: "rgb(255, 0, 0)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "22pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "36px",
-                                  }}
+                                  className="b1"
+                                  style={
+                                    {
+                                      // opacity: "0.94",
+                                      // color: "rgb(255, 0, 0)",
+                                      // backgroundColor: "transparent",
+                                      // fontWeight: "bold",
+                                      // fontStyle: "normal",
+                                      // textDecoration: "none",
+                                      // fontSize: "22pt",
+                                      // fontFamily:
+                                      //   "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                      // lineHeight: "36px",
+                                    }
+                                  }
                                 >
                                   {"Project Evolv"}
                                 </p>
                               </Grid>
                               <Grid item xs={12}>
                                 <p
-                                  style={{
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "12pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "20px",
-                                  }}
+                                  className="b2"
+                                  // style={{
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "12pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "20px",
+                                  // }}
                                 >
                                   {"Our C# essential tool kit "}
                                 </p>
@@ -639,17 +653,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   {"Navigation Feature/s"}
                                 </p>
@@ -662,17 +677,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   Dialogue Features
                                 </p>
@@ -685,17 +701,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   {"Themes, Icons, Control Feature/s"}
                                 </p>
@@ -708,17 +725,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   {"Search Feature/s"}
                                 </p>
@@ -731,17 +749,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   {"Setting Feature/s"}
                                 </p>
@@ -754,17 +773,18 @@ const IndexApp = ({}: IIndexProp) => {
                                 }}
                               >
                                 <p
-                                  style={{
-                                    color: "rgb(178, 161, 199)",
-                                    backgroundColor: "transparent",
-                                    fontWeight: "bold",
-                                    fontStyle: "normal",
-                                    textDecoration: "none",
-                                    fontSize: "20pt",
-                                    fontFamily:
-                                      "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                                    lineHeight: "33px",
-                                  }}
+                                  className="caption"
+                                  // style={{
+                                  //   color: "rgb(178, 161, 199)",
+                                  //   backgroundColor: "transparent",
+                                  //   fontWeight: "bold",
+                                  //   fontStyle: "normal",
+                                  //   textDecoration: "none",
+                                  //   fontSize: "20pt",
+                                  //   fontFamily:
+                                  //     "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                                  //   lineHeight: "33px",
+                                  // }}
                                 >
                                   {"Help Feature/s"}
                                 </p>
@@ -818,8 +838,8 @@ const IndexApp = ({}: IIndexProp) => {
                             xs={12}
                             style={{
                               textAlign: "right",
-                              color: "rgb(192, 0, 0)",
-                              fontWeight: "bold",
+                              // color: "rgb(192, 0, 0)",
+                              // fontWeight: "bold",
                             }}
                           >
                             <p>New</p>
@@ -834,15 +854,15 @@ const IndexApp = ({}: IIndexProp) => {
                             style={{
                               marginTop: "40px",
                               textAlign: "right",
-                              color: "rgb(83, 129, 53)",
-                              backgroundColor: "transparent",
-                              fontWeight: "bold",
+                              // color: "rgb(83, 129, 53)",
+                              // backgroundColor: "transparent",
+                              // fontWeight: "bold",
                             }}
                           >
-                            <p className="b2">
+                            <p className="b1">
                               Project Evolv Version 1.0 Free to Students
                             </p>
-                            <div style={{ fontSize: "9pt" }}>
+                            <div className="b2">
                               <p>
                                 {
                                   "(link w/go to pricing w/structures to give customers free mos and"
@@ -858,17 +878,18 @@ const IndexApp = ({}: IIndexProp) => {
                           <Grid
                             item
                             xs={12}
+                            className="caption"
                             style={{
                               textAlign: "right",
                               marginTop: "20px",
-                              backgroundColor: "transparent",
-                              fontWeight: "bold",
-                              fontStyle: "normal",
-                              textDecoration: "none",
-                              fontSize: "14pt",
-                              fontFamily:
-                                "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
-                              lineHeight: "18px",
+                              // backgroundColor: "transparent",
+                              // fontWeight: "bold",
+                              // fontStyle: "normal",
+                              // textDecoration: "none",
+                              // fontSize: "14pt",
+                              // fontFamily:
+                              //   "WordVisi_MSFontService, Calibri, Calibri_MSFontService, sans-serif",
+                              // lineHeight: "18px",
                             }}
                           >
                             <p>
@@ -886,16 +907,17 @@ const IndexApp = ({}: IIndexProp) => {
                             item
                             xs={12}
                             style={{
-                              color: "rgb(204, 193, 217)",
-                              backgroundColor: "transparent",
+                              // color: "rgb(204, 193, 217)",
+                              // backgroundColor: "transparent",
                               marginTop: "40px",
                               textAlign: "right",
-                              fontWeight: "bold",
+                              // fontWeight: "bold",
                             }}
-                            className="b2"
                           >
-                            <p>Project Evolv Version 3.0</p>
-                            <p>To be showcased for Transcend 2023</p>
+                            <p className="b1">Project Evolv Version 3.0</p>
+                            <p className="b2">
+                              To be showcased for Transcend 2023
+                            </p>
                           </Grid>
                         </Grid>
                       </Grid>
@@ -1452,7 +1474,7 @@ const IndexApp = ({}: IIndexProp) => {
                         >
                           <Scrambler
                             style={{
-                              fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                              fontSize: isMobile ? "6vw" : "4vw",
                             }}
                             className="whitespace-no-wrap"
                             delay={500}
@@ -1475,7 +1497,7 @@ const IndexApp = ({}: IIndexProp) => {
                     >
                       <Scrambler
                         style={{
-                          fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                          fontSize: isMobile ? "6vw" : "4vw",
                         }}
                         className="whitespace-no-wrap"
                         delay={400}
@@ -1500,7 +1522,7 @@ const IndexApp = ({}: IIndexProp) => {
                       >
                         <Scrambler
                           style={{
-                            fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                            fontSize: isMobile ? "6vw" : "4vw",
                           }}
                           className="whitespace-no-wrap"
                           delay={400}
@@ -1522,7 +1544,7 @@ const IndexApp = ({}: IIndexProp) => {
                   >
                     <Scrambler
                       style={{
-                        fontSize: deviceView === "mobile" ? "6vw" : "4vw",
+                        fontSize: isMobile ? "6vw" : "4vw",
                       }}
                       className={`${
                         loading ? `` : `opacity-0`

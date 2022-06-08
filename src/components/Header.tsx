@@ -27,6 +27,9 @@ import { makeStyles } from "@mui/styles";
 // import { makeStyles, Theme, createStyles } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "./Button";
+import { breakpoint } from "../utils/css";
+import styled from "@emotion/styled";
+import { isDesktop, isMobile } from "react-device-detect";
 
 const headersData = [
   {
@@ -77,10 +80,52 @@ const useStyles: any = makeStyles(() => ({
   },
 }));
 
+/** ============================================================================
+ * @css
+ */
+const Wrapper = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+  padding: 0.5rem 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-black-90) 16.67%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-blend-mode: multiply;
+
+  ${breakpoint(`tablet`)} {
+    padding: 1rem 0;
+  }
+`;
+
+const Container = styled.div`
+  padding: ${(props: any) => (props.primary ? `13px 0` : `12px 0;`)};
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+  color: var(--color-white);
+`;
+
+const ButtonWrapper = styled.div`
+  display: none;
+
+  ${breakpoint(`large-tablet`)} {
+    display: block;
+  }
+`;
+
+const StyledLink = styled((props: any) => <Link {...props} />)`
+  color: var(--color-white);
+`;
+
 const Header = ({ clipped, color }: any) => {
   const { headerVisible } = useContext(AppDataContext);
   const { device } = useContext(DocumentContext);
-
   const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
 
   const [state, setState] = useState({
@@ -270,7 +315,7 @@ const Header = ({ clipped, color }: any) => {
           />
         ) : (
           <div
-            className="b2"
+            className="b1"
             style={{
               width: "200px",
               // height: "60px",
@@ -279,7 +324,9 @@ const Header = ({ clipped, color }: any) => {
               // top: "50%",
             }}
           >
-            NOCTEM CORP
+            <StyledLink className="b1" to="/">
+              <Scrambler text={!isDesktop ? "NOCTEM CORP" : "NOCTEM CORP"} />
+            </StyledLink>
             {/* <Scrambler
                   
                   className="b2"
@@ -518,7 +565,7 @@ const Header = ({ clipped, color }: any) => {
           background: "linear-gradient(180deg, #121212 16.67%, transparent)",
         }}
       >
-        {mobileView ? displayMobile() : displayDesktop()}
+        {isMobile ? displayMobile() : displayDesktop()}
       </AppBar>
     </div>
   );
