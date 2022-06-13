@@ -314,7 +314,7 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowProgCode && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
-                    className={"animate__animated animate__backInRight g4"}
+                    className={"animate__animated animate__backInRight " + (isMobile ? "g5" : "g3")}
                     style={{
                       animationDuration: "2.5s",
                       animationDelay: "0.3s",
@@ -333,7 +333,7 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowNoctemLoading && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
-                    className="g4"
+                    className={isMobile ? "g5" : "g3"}
                     style={{
                       color: "white",
                       animationDuration: "2.5s",
@@ -880,7 +880,7 @@ const IndexApp = ({}: IIndexProp) => {
                       </Grid>
                       <Grid item xs={12} style={{ marginTop: "20px" }}>
                         <p
-                          className={isMobile ? "b2" : "b2"}
+                          className={isMobile ? "b2 mb-001" : "b2"}
                         >
                           {"Quarterly online workshops for users"}
                         </p>
@@ -979,7 +979,7 @@ const IndexApp = ({}: IIndexProp) => {
                           }}
                         >
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b3" : "b1"} >
+                            <p  className={isMobile ? "b1" : "b1"} >
                             <WaveText
                               delay={10}
                               text={`Senior C# Web Engineer`}
@@ -987,33 +987,33 @@ const IndexApp = ({}: IIndexProp) => {
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b3" : "b1"} >
+                            <p  className={isMobile ? "b2" : "b1"} >
                             <WaveText delay={10} text={`Junior C# Engineers`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b3" : "b1"} >
+                            <p  className={isMobile ? "b1" : "b1"} >
                             <WaveText delay={10} text={`Sales Engineers`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
                             {" "}
-                            <p  className={isMobile ? "b3" : "b1"} >
+                            <p  className={isMobile ? "b2" : "b1"} >
                             <WaveText delay={10} text={`Chief Evangelist`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b3" : "b2"} >
+                            <p  className={isMobile ? "b1" : "b2"} >
                             <WaveText delay={10} text={`Director of Sales`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b3" : "b2"} >
+                            <p  className={isMobile ? "b2" : "b2"} >
                             <WaveText delay={10} text={`Sales Consultants `} />
                             </p>
                           </Grid>
                           <Grid item sm={4}>
-                            <p  className={isMobile ? "b3" : "b2"} >
+                            <p  className={isMobile ? "b1" : "b2"} >
                             <WaveText delay={10} text={`Marketing Director`} />
                             </p>
                           </Grid>
@@ -1079,17 +1079,17 @@ const IndexApp = ({}: IIndexProp) => {
                           marginTop: "20px",
                         }}
                       >
-                        <p className={isMobile ? "b3" : "b2"}>
+                        <p className={isMobile ? "b2" : "b2"}>
                           {
                             "Will go to a form that they need to fill out after they have put in a full name, phone, email and best time to reach"
                           }
                         </p>
-                        <p className={isMobile ? "b3" : "b2"}>
+                        <p className={isMobile ? "b2" : "b2"}>
                           {
                             "them. Their would be an auto generated message that information will be sent to their email once information has"
                           }
                         </p>
-                        <p className={isMobile ? "b3" : "b2"}>
+                        <p className={isMobile ? "b2" : "b2"}>
                           {
                             "been confirmed and thanking them for their interest."
                           }
@@ -1154,7 +1154,7 @@ const IndexApp = ({}: IIndexProp) => {
                           marginTop: "20px",
                         }}
                       >
-                        <p className={isMobile ? "b3" : "b1"}>{"Use 800 #"}</p>
+                        <p className={isMobile ? "b1" : "b1"}>{"Use 800 #"}</p>
                         <p className={isMobile ? "b3" : "b2"}>{"IL suite addres"}</p>
                         <p className={isMobile ? "b3" : "b2"}>{"IL area code phone number"}</p>
                         <p className={isMobile ? "b3" : "b2"}>{"info@NCTMCO.com"}</p>

@@ -82,6 +82,19 @@ const Fonts = () => (
 
       .g3 {
         font-size: calc(${VW_RATIO} * 1.92);
+        /* font-size: calc(6.95vw * 1); */
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .g4 {
+        font-size: calc(${VW_RATIO} * 1.5);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .g5 {
+        font-size: calc(${VW_RATIO} * 1);
         line-height: 1;
         letter-spacing: -0.02em;
       }
