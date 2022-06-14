@@ -4849,7 +4849,6 @@ button:focus {
   --swiper-theme-color: #007aff;
 }
 
-
 /* css added by rashid */
 .title-lg {
   font-size: calc(3.336vw);
@@ -4859,7 +4858,7 @@ button:focus {
   font-size: calc(10.0775vw);
   line-height: 120%;
 }
-.b2-desc-lg{
+.b2-desc-lg {
   font-size: calc(1.112vw);
   line-height: 140%;
   white-space: pre-line;
@@ -4871,4 +4870,14 @@ button:focus {
 }
 .mb-001 {
   margin-bottom: 30px;
+}
+.pt-001 {
+  padding-top: 0px !important;
+  margin-top: -50px;
+}
+@media screen and (min-width: 358px) and (max-width: 600px) {
+  .mb-menu-bg {
+    background-color: grey;
+    color: white;
+  }
 }
