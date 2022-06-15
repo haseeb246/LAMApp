@@ -186,8 +186,8 @@ const IndexApp = ({}: IIndexProp) => {
     }, 26000);
     setTimeout(() => {
       setAfterLoading(true);
-      // }, 27000);
-    }, 200);
+    }, 27000);
+    // }, 200);
 
     return () => {
       window.removeEventListener("resize", () => setResponsiveness());
@@ -314,7 +314,10 @@ const IndexApp = ({}: IIndexProp) => {
               {isShowProgCode && (
                 <Grid item xs={12} style={{ marginTop: "15px" }}>
                   <div
-                    className={"animate__animated animate__backInRight " + (isMobile ? "g5" : "g3")}
+                    className={
+                      "animate__animated animate__backInRight " +
+                      (isMobile ? "g5" : "g3")
+                    }
                     style={{
                       animationDuration: "2.5s",
                       animationDelay: "0.3s",
@@ -592,16 +595,10 @@ const IndexApp = ({}: IIndexProp) => {
                           <Grid item xs={12} md={6}>
                             <Grid container>
                               <Grid item xs={12}>
-                                <p
-                                  className="b1"
-                                >
-                                  {"Project Evolv"}
-                                </p>
+                                <p className="b1">{"Project Evolv"}</p>
                               </Grid>
                               <Grid item xs={12}>
-                                <p
-                                  className="b2"
-                                >
+                                <p className="b2">
                                   {"Our C# essential tool kit "}
                                 </p>
                               </Grid>
@@ -612,9 +609,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginTop: "20px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
+                                <p className="caption">
                                   {"Navigation Feature/s"}
                                 </p>
                               </Grid>
@@ -625,11 +620,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginTop: "20px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
-                                  Dialogue Features
-                                </p>
+                                <p className="caption">Dialogue Features</p>
                               </Grid>
                               <Grid
                                 item
@@ -638,9 +629,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginTop: "20px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
+                                <p className="caption">
                                   {"Themes, Icons, Control Feature/s"}
                                 </p>
                               </Grid>
@@ -651,11 +640,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginTop: "20px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
-                                  {"Search Feature/s"}
-                                </p>
+                                <p className="caption">{"Search Feature/s"}</p>
                               </Grid>
                               <Grid
                                 item
@@ -664,11 +649,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginTop: "20px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
-                                  {"Setting Feature/s"}
-                                </p>
+                                <p className="caption">{"Setting Feature/s"}</p>
                               </Grid>
                               <Grid
                                 item
@@ -678,11 +659,7 @@ const IndexApp = ({}: IIndexProp) => {
                                   marginBottom: "30px",
                                 }}
                               >
-                                <p
-                                  className="caption"
-                                >
-                                  {"Help Feature/s"}
-                                </p>
+                                <p className="caption">{"Help Feature/s"}</p>
                               </Grid>
                             </Grid>
                           </Grid>
@@ -843,16 +820,15 @@ const IndexApp = ({}: IIndexProp) => {
                         </p>
                       </Grid>
 
-                      <Grid
-                        item
-                        xs={12}
-                      >
+                      <Grid item xs={12}>
                         <p className={isMobile ? "b3" : "b2"}>
-                        {"We are currently available for contract work. Lets"}
-                        <br />
-                        {"talk & discuss your project and goals to to see how"}
-                        <br />
-                        {"we can assist in completing your project."}
+                          {"We are currently available for contract work. Lets"}
+                          <br />
+                          {
+                            "talk & discuss your project and goals to to see how"
+                          }
+                          <br />
+                          {"we can assist in completing your project."}
                         </p>
                       </Grid>
                     </Grid>
@@ -872,16 +848,10 @@ const IndexApp = ({}: IIndexProp) => {
                         </p>
                       </Grid>
                       <Grid item xs={12} style={{ marginTop: "20px" }}>
-                        <p
-                          className={isMobile ? "b1" : "b1"}
-                        >
-                          {"Workshops:"}
-                        </p>
+                        <p className={isMobile ? "b1" : "b1"}>{"Workshops:"}</p>
                       </Grid>
                       <Grid item xs={12} style={{ marginTop: "20px" }}>
-                        <p
-                          className={isMobile ? "b2 mb-001" : "b2"}
-                        >
+                        <p className={isMobile ? "b2 mb-001" : "b2"}>
                           {"Quarterly online workshops for users"}
                         </p>
                       </Grid>
@@ -898,11 +868,7 @@ const IndexApp = ({}: IIndexProp) => {
                   </Grid>
 
                   <Grid item xs={12} style={{ marginTop: "30px" }}>
-                    <p
-                      className={isMobile ? "b2" : "b1"}
-                    >
-                      {"Events:"}
-                    </p>
+                    <p className={isMobile ? "b2" : "b1"}>{"Events:"}</p>
                   </Grid>
                   <Grid
                     item
@@ -911,16 +877,10 @@ const IndexApp = ({}: IIndexProp) => {
                       marginTop: "30px",
                     }}
                   >
-                    <p
-                      className={isMobile ? "b3" : "b1"}
-                    >
-                      {"Transcend 2023"}
-                    </p>
+                    <p className={isMobile ? "b3" : "b1"}>{"Transcend 2023"}</p>
                   </Grid>
                   <Grid item xs={12}>
-                    <p
-                      className={isMobile ? "b3" : "b2"}
-                    >
+                    <p className={isMobile ? "b3" : "b2"}>
                       {"Our First Annual Project Evolv conference  "}
                     </p>
                   </Grid>
@@ -931,9 +891,7 @@ const IndexApp = ({}: IIndexProp) => {
                       marginTop: "20px",
                     }}
                   >
-                    <p
-                      className={isMobile ? "b3" : "b2"}
-                    >
+                    <p className={isMobile ? "b3" : "b2"}>
                       {"Full details to follow soon"}
                     </p>
                   </Grid>
@@ -941,32 +899,30 @@ const IndexApp = ({}: IIndexProp) => {
               </Grid>
               <Grid item xs={12} style={{ marginTop: "150px" }}>
                 <Grid container>
-                  <Grid
-                    item
-                    xs={12}
-                    style={{}}
-                  >
+                  <Grid item xs={12} style={{}}>
                     <Grid container>
                       <Grid item xs={12}>
-                      <AppearOnScroll once={false}>
-                      <h3
-                        id={"employment"}
-                        className={"animate__animated animate__backInRight h1"}
-                        style={{
-                          animationDuration: "2s",
-                          animationDelay: "100",
-                          textDecoration: "underline",
-                          textAlign: "center",
-                        }}
-                      >
-                        <Scrambler
-                          className="whitespace-no-wrap"
-                          delay={400}
-                          iterations={20}
-                          text={`Employment:`}
-                        />
-                      </h3>
-                    </AppearOnScroll>
+                        <AppearOnScroll once={false}>
+                          <h3
+                            id={"employment"}
+                            className={
+                              "animate__animated animate__backInRight h1"
+                            }
+                            style={{
+                              animationDuration: "2s",
+                              animationDelay: "100",
+                              textDecoration: "underline",
+                              textAlign: "center",
+                            }}
+                          >
+                            <Scrambler
+                              className="whitespace-no-wrap"
+                              delay={400}
+                              iterations={20}
+                              text={`Employment:`}
+                            />
+                          </h3>
+                        </AppearOnScroll>
                       </Grid>
                       <Grid item xs={12}>
                         <Grid
@@ -974,47 +930,55 @@ const IndexApp = ({}: IIndexProp) => {
                           className={isMobile ? "b3" : "b2"}
                           style={{
                             marginTop: "30px",
-                            textAlign:
-                              isMobile ? "center" : "left",
+                            textAlign: isMobile ? "center" : "left",
                           }}
                         >
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b1" : "b1"} >
-                            <WaveText
-                              delay={10}
-                              text={`Senior C# Web Engineer`}
-                            />
+                            <p className={isMobile ? "b1" : "b1"}>
+                              <WaveText
+                                delay={10}
+                                text={`Senior C# Web Engineer`}
+                              />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b2" : "b1"} >
-                            <WaveText delay={10} text={`Junior C# Engineers`} />
+                            <p className={isMobile ? "b2" : "b1"}>
+                              <WaveText
+                                delay={10}
+                                text={`Junior C# Engineers`}
+                              />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b1" : "b1"} >
-                            <WaveText delay={10} text={`Sales Engineers`} />
+                            <p className={isMobile ? "b1" : "b1"}>
+                              <WaveText delay={10} text={`Sales Engineers`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
                             {" "}
-                            <p  className={isMobile ? "b2" : "b1"} >
-                            <WaveText delay={10} text={`Chief Evangelist`} />
+                            <p className={isMobile ? "b2" : "b1"}>
+                              <WaveText delay={10} text={`Chief Evangelist`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b1" : "b2"} >
-                            <WaveText delay={10} text={`Director of Sales`} />
+                            <p className={isMobile ? "b1" : "b2"}>
+                              <WaveText delay={10} text={`Director of Sales`} />
                             </p>
                           </Grid>
                           <Grid item xs={12} sm={4} md={3}>
-                            <p  className={isMobile ? "b2" : "b2"} >
-                            <WaveText delay={10} text={`Sales Consultants `} />
+                            <p className={isMobile ? "b2" : "b2"}>
+                              <WaveText
+                                delay={10}
+                                text={`Sales Consultants `}
+                              />
                             </p>
                           </Grid>
                           <Grid item sm={4}>
-                            <p  className={isMobile ? "b1" : "b2"} >
-                            <WaveText delay={10} text={`Marketing Director`} />
+                            <p className={isMobile ? "b1" : "b2"}>
+                              <WaveText
+                                delay={10}
+                                text={`Marketing Director`}
+                              />
                             </p>
                           </Grid>
                         </Grid>
@@ -1053,24 +1017,26 @@ const IndexApp = ({}: IIndexProp) => {
                     <Grid container>
                       <Grid item xs={12}>
                         <AppearOnScroll once={false}>
-                       <h3
-                        id={"investors"}
-                        className={"animate__animated animate__backInRight h1"}
-                        style={{
-                          animationDuration: "2s",
-                          animationDelay: "100",
-                          textDecoration: "underline",
-                          textAlign: "center",
-                        }}
-                      >
-                        <Scrambler
-                          className="whitespace-no-wrap"
-                          delay={400}
-                          iterations={20}
-                          text={`Investors:`}
-                        />
-                      </h3>
-                    </AppearOnScroll>
+                          <h3
+                            id={"investors"}
+                            className={
+                              "animate__animated animate__backInRight h1"
+                            }
+                            style={{
+                              animationDuration: "2s",
+                              animationDelay: "100",
+                              textDecoration: "underline",
+                              textAlign: "center",
+                            }}
+                          >
+                            <Scrambler
+                              className="whitespace-no-wrap"
+                              delay={400}
+                              iterations={20}
+                              text={`Investors:`}
+                            />
+                          </h3>
+                        </AppearOnScroll>
                       </Grid>
                       <Grid
                         item
@@ -1105,7 +1071,9 @@ const IndexApp = ({}: IIndexProp) => {
                       textAlign: "center",
                     }}
                   >
-                    <p className={isMobile ? "b3" : "b1"}>{"Link for Auto responder"}</p>
+                    <p className={isMobile ? "b3" : "b1"}>
+                      {"Link for Auto responder"}
+                    </p>
                   </Grid>
                 </Grid>
               </Grid>
@@ -1127,25 +1095,27 @@ const IndexApp = ({}: IIndexProp) => {
                   >
                     <Grid container>
                       <Grid item xs={12}>
-                      <AppearOnScroll once={false}>
-                       <h3
-                        id={"contactus"}
-                        className={"animate__animated animate__backInRight h1"}
-                        style={{
-                          animationDuration: "2s",
-                          animationDelay: "100",
-                          textDecoration: "underline",
-                          textAlign: "center",
-                        }}
-                      >
-                        <Scrambler
-                          className="whitespace-no-wrap"
-                          delay={400}
-                          iterations={20}
-                          text={`Contact Us:`}
-                        />
-                      </h3>
-                    </AppearOnScroll>
+                        <AppearOnScroll once={false}>
+                          <h3
+                            id={"contactus"}
+                            className={
+                              "animate__animated animate__backInRight h1"
+                            }
+                            style={{
+                              animationDuration: "2s",
+                              animationDelay: "100",
+                              textDecoration: "underline",
+                              textAlign: "center",
+                            }}
+                          >
+                            <Scrambler
+                              className="whitespace-no-wrap"
+                              delay={400}
+                              iterations={20}
+                              text={`Contact Us:`}
+                            />
+                          </h3>
+                        </AppearOnScroll>
                       </Grid>
                       <Grid
                         item
@@ -1155,9 +1125,15 @@ const IndexApp = ({}: IIndexProp) => {
                         }}
                       >
                         <p className={isMobile ? "b1" : "b1"}>{"Use 800 #"}</p>
-                        <p className={isMobile ? "b3" : "b2"}>{"IL suite addres"}</p>
-                        <p className={isMobile ? "b3" : "b2"}>{"IL area code phone number"}</p>
-                        <p className={isMobile ? "b3" : "b2"}>{"info@NCTMCO.com"}</p>
+                        <p className={isMobile ? "b3" : "b2"}>
+                          {"IL suite addres"}
+                        </p>
+                        <p className={isMobile ? "b3" : "b2"}>
+                          {"IL area code phone number"}
+                        </p>
+                        <p className={isMobile ? "b3" : "b2"}>
+                          {"info@NCTMCO.com"}
+                        </p>
                       </Grid>
                     </Grid>
                   </Grid>
