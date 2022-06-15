@@ -554,7 +554,7 @@ const IndexApp = ({}: IIndexProp) => {
                       <p
                         className={
                           "animate__animated animate__backInRight " +
-                          (isMobile ? "h1" : "b1")
+                          (isMobile ? "h1 pt-001" : "b1")
                         }
                         style={{
                           textAlign: "right",
@@ -815,7 +815,7 @@ const IndexApp = ({}: IIndexProp) => {
                       }}
                     >
                       <Grid item xs={12}>
-                        <p className={isMobile ? "b1" : "b1"}>
+                        <p className={isMobile ? "b1 pt-001" : "b1"}>
                           {"Contract & Consulting Work "}
                         </p>
                       </Grid>
@@ -897,7 +897,7 @@ const IndexApp = ({}: IIndexProp) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} style={{ marginTop: "150px" }}>
+              <Grid item xs={12} style={{ marginTop: "80px" }}>
                 <Grid container>
                   <Grid item xs={12} style={{}}>
                     <Grid container>

@@ -170,7 +170,7 @@ const Header = ({ clipped, color }: any) => {
           {headerVisible && (
             <div className="flex">
               <ul className="flex items-center">
-                <li className="header__link animation-appear-right-slow animation-delay-1 mr-v2">
+                <li className="header__link mb-menu-bg animation-appear-right-slow animation-delay-1 mr-v2">
                   <CursorInteractive mode="up" text="unimplemented">
                     {/* <Link to="/home/#section1">aaaa</Link> */}
                     {/* <div
@@ -189,7 +189,7 @@ const Header = ({ clipped, color }: any) => {
                     </a>
                   </CursorInteractive>
                 </li>
-                <li className="header__link animation-appear-right-slow animation-delay-1 mr-v2">
+                <li className="header__link mb-menu-bg animation-appear-right-slow animation-delay-1 mr-v2">
                   <CursorInteractive mode="down" text="unimplemented">
                     {/* <Link to="/home/#section1">aaaa</Link> */}
                     {/* <div
