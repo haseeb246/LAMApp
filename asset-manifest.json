@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/lamapp/static/css/main.2c9bdf5c.css",
-    "main.js": "/lamapp/static/js/main.450414a7.js",
-    "static/js/27.d92f1486.chunk.js": "/lamapp/static/js/27.d92f1486.chunk.js",
+    "main.css": "/lamapp/static/css/main.333d6a63.css",
+    "main.js": "/lamapp/static/js/main.535d351c.js",
+    "static/js/787.5f9d193f.chunk.js": "/lamapp/static/js/787.5f9d193f.chunk.js",
     "static/media/fk-grotesk-regular-eot": "/lamapp/static/media/fk-grotesk-regular-81bc7bfcb65f7cb771e591d9c903b37f.5a98bbc8f4e4b035e763.eot",
     "static/media/fk-grotesk-regular-ttf": "/lamapp/static/media/fk-grotesk-regular-1ee358930980e3113679d817debc9dfd.5e295ce4d809aee246cc.ttf",
     "static/media/fk-display-regular-eot": "/lamapp/static/media/fk-display-regular-5fff5c46a760a19bf9065386eaf26cef.b4ae7c7d23bf35c8b568.eot",
@@ -18,10 +18,13 @@
     "index.html": "/lamapp/index.html",
     "static/media/fk-grotesk-monospaced.woff": "/lamapp/static/media/fk-grotesk-monospaced.84409a56dcca802369f7.woff",
     "static/media/fk-display-regular.woff": "/lamapp/static/media/fk-display-regular.5969e48b3bf7f479b901.woff",
-    "static/media/fk-grotesk-regular.woff": "/lamapp/static/media/fk-grotesk-regular.b57ed11558b63d5a9518.woff"
+    "static/media/fk-grotesk-regular.woff": "/lamapp/static/media/fk-grotesk-regular.b57ed11558b63d5a9518.woff",
+    "main.333d6a63.css.map": "/lamapp/static/css/main.333d6a63.css.map",
+    "main.535d351c.js.map": "/lamapp/static/js/main.535d351c.js.map",
+    "787.5f9d193f.chunk.js.map": "/lamapp/static/js/787.5f9d193f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c9bdf5c.css",
-    "static/js/main.450414a7.js"
+    "static/css/main.333d6a63.css",
+    "static/js/main.535d351c.js"
   ]
 }
